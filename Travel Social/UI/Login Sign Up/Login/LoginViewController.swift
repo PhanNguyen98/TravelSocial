@@ -13,32 +13,54 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var logInButton: UIButton!
+    @IBOutlet weak var signUpButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
-        emailTextField.text = "a@a.com"
-        passwordTextField.text = "A123456"
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "chevron.backward"), style: .plain, target: self, action: #selector(popViewController))
+        setNavigation()
+        setViewKeyboard()
+        emailTextField.text = "c@c.com"
+        passwordTextField.text = "C123456"
     }
     
     @objc func popViewController() {
         self.navigationController?.popViewController(animated: true)
     }
     
+    func setNavigation() {
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "chevron.backward"), style: .plain, target: self, action: #selector(popViewController))
+    }
+    
     func setUI() {
-        emailTextField.layer.cornerRadius = emailTextField.frame.height / 2
-        emailTextField.layer.borderWidth = 0.5
-        emailTextField.layer.borderColor = UIColor.black.cgColor
+        self.view.setBackgroundImage(img: UIImage(named: "background")!)
+        
+        emailTextField.layer.cornerRadius = 20
         emailTextField.layer.masksToBounds = true
         
-        passwordTextField.layer.cornerRadius = passwordTextField.frame.height / 2
-        passwordTextField.layer.borderWidth = 0.5
-        passwordTextField.layer.borderColor = UIColor.black.cgColor
+        passwordTextField.layer.cornerRadius = 20
         passwordTextField.layer.masksToBounds = true
+        passwordTextField.isSecureTextEntry = true
         
         logInButton.layer.cornerRadius = logInButton.frame.height / 2
         logInButton.layer.masksToBounds = true
+        
+        signUpButton.layer.cornerRadius = logInButton.frame.height / 2
+        signUpButton.layer.masksToBounds = true
+    }
+    
+    func setViewKeyboard() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(sender:)), name: UIResponder.keyboardWillShowNotification, object: nil);
+
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(sender:)), name: UIResponder.keyboardWillHideNotification, object: nil);
+    }
+    
+    @objc func keyboardWillShow(sender: NSNotification) {
+         self.view.frame.origin.y = -150
+    }
+
+    @objc func keyboardWillHide(sender: NSNotification) {
+         self.view.frame.origin.y = 0
     }
     
     @IBAction func logIn(_ sender: Any) {
@@ -56,6 +78,11 @@ class LoginViewController: UIViewController {
                 self.navigationController?.pushViewController(customBarViewController, animated: true)
             }
         }
+    }
+    
+    @IBAction func showSignUp(_ sender: Any) {
+        let signUpViewController = SignUpViewController()
+        self.navigationController?.pushViewController(signUpViewController, animated: true)
     }
     
     func showError(message: String) {

@@ -21,7 +21,6 @@ class UserViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.setNavigationBarHidden(true, animated: true)
         dataUser = DataManager.shared.user
         tableView.reloadData()
     }
@@ -33,7 +32,16 @@ class UserViewController: UIViewController {
         tableView.register(UINib(nibName: "ListFriendTableViewCell", bundle: nil), forCellReuseIdentifier: "ListFriendTableViewCell")
         tableView.register(UINib(nibName: "PostTableViewCell", bundle: nil), forCellReuseIdentifier: "PostTableViewCell")
     }
-
+    
+    func setDataPost() {
+        DataManager.shared.getPostFromId(id: DataManager.shared.user.id!) { result in
+            self.dataSources = result
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
 }
 
 extension UserViewController: UITableViewDelegate {
@@ -41,11 +49,11 @@ extension UserViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.section {
         case 0:
-            return 180
+            return 440
         case 1:
             return 100
         default:
-            return 100
+            return 500
         }
     }
     
@@ -54,6 +62,9 @@ extension UserViewController: UITableViewDelegate {
 extension UserViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if section == 0 {
+            return 0
+        }
         return 10
     }
     
@@ -77,10 +88,12 @@ extension UserViewController: UITableViewDataSource {
         case 0:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "InfoUserTableViewCell", for: indexPath) as? InfoUserTableViewCell else { return InfoUserTableViewCell() }
             cell.cellDelegate = self
+            cell.selectionStyle = .none
             cell.setData(item: dataUser)
             return cell
         case 1:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "ListFriendTableViewCell", for: indexPath) as? ListFriendTableViewCell else { return ListFriendTableViewCell() }
+            cell.selectionStyle = .none
             cell.cellDelegate = self
             return cell
         default:
@@ -92,7 +105,7 @@ extension UserViewController: UITableViewDataSource {
 }
 
 extension UserViewController: InfoUserTableViewCellDelegate {
-    func showEditProfile(viewController: UIViewController) {
+    func pushViewController(viewController: UIViewController) {
         self.navigationController?.pushViewController(viewController, animated: true)
     }
 }
@@ -102,3 +115,4 @@ extension UserViewController: ListFriendTableViewCellDelegate {
         self.navigationController?.pushViewController(viewController, animated: true)
     }
 }
+

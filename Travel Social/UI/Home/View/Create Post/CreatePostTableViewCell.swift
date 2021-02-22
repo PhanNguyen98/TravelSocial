@@ -43,9 +43,10 @@ class CreatePostTableViewCell: UITableViewCell {
     }
     
     func setData(item: User) {
-        DataImageManager.shared.downloadImage(path: "avatar", nameImage: item.nameImage!)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            self.avatarImageView.image = DataImageManager.shared.resultImage
+        DataImageManager.shared.downloadImage(path: "avatar", nameImage: item.nameImage!) { result in
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self.avatarImageView.image = result
+            }
         }
     }
     

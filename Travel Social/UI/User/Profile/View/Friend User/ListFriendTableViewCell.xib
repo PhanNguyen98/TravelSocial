@@ -30,9 +30,9 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LxL-lD-gft">
-                        <rect key="frame" x="25" y="62" width="447" height="32"/>
-                        <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
-                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                        <rect key="frame" x="35" y="62" width="427" height="30"/>
+                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                         <state key="normal" title="See All Friends">
                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </state>
@@ -44,9 +44,9 @@
                 <constraints>
                     <constraint firstItem="v4D-n6-tD8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="MJJ-sk-8Va"/>
                     <constraint firstItem="v4D-n6-tD8" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="cKW-LN-AV5"/>
-                    <constraint firstItem="LxL-lD-gft" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="25" id="fLF-9b-YUW"/>
+                    <constraint firstItem="LxL-lD-gft" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="35" id="fLF-9b-YUW"/>
                     <constraint firstItem="iyI-x2-6AI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="pHI-1V-DiY"/>
-                    <constraint firstAttribute="trailing" secondItem="LxL-lD-gft" secondAttribute="trailing" constant="25" id="qYn-aY-Uks"/>
+                    <constraint firstAttribute="trailing" secondItem="LxL-lD-gft" secondAttribute="trailing" constant="35" id="qYn-aY-Uks"/>
                     <constraint firstItem="LxL-lD-gft" firstAttribute="top" secondItem="iyI-x2-6AI" secondAttribute="bottom" constant="10" id="to6-RE-KVd"/>
                     <constraint firstItem="iyI-x2-6AI" firstAttribute="top" secondItem="v4D-n6-tD8" secondAttribute="bottom" constant="5" id="uYd-uN-c8q"/>
                 </constraints>
@@ -60,8 +60,8 @@
         </tableViewCell>
     </objects>
     <resources>
-        <systemColor name="opaqueSeparatorColor">
-            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

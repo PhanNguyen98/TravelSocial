@@ -12,7 +12,7 @@ class CustomBarViewController: UITabBarController {
 
     var homeViewController = HomeViewController()
     var searchViewController = SearchViewController()
-    var messageViewController = SearchViewController()
+    var messageViewController = MessageViewController()
     var userViewController = UserViewController()
     
     override func viewDidLoad() {
@@ -25,20 +25,20 @@ class CustomBarViewController: UITabBarController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
+        self.navigationController?.navigationBar.barTintColor = UIColor.white
     }
     
     func setTabBar() {
         self.delegate = self
         homeViewController.tabBarItem.image = UIImage(systemName: "house.fill")
         searchViewController.tabBarItem.image = UIImage(systemName: "magnifyingglass")
-        let searchNavigation = UINavigationController(rootViewController: searchViewController)
         messageViewController.tabBarItem.image = UIImage(systemName: "message.fill")
         userViewController.tabBarItem.image = UIImage(systemName: "person.fill")
-        viewControllers = [homeViewController, searchNavigation, messageViewController, userViewController]
-        tabBar.tintColor = UIColor.black
+        viewControllers = [homeViewController, searchViewController, messageViewController, userViewController]
+        tabBar.tintColor = UIColor.blue
         for tabBarItem in tabBar.items! {
             tabBarItem.title = ""
-        }
+        }   
     }
     
     func checkPhotoLibrary() {
@@ -70,5 +70,4 @@ class CustomBarViewController: UITabBarController {
 }
 
 extension CustomBarViewController: UITabBarControllerDelegate {
-    
 }

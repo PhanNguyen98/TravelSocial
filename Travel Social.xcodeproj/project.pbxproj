@@ -15,9 +15,8 @@
 		D53B4A8F25BFCDAC007D9604 /* ListFriendTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D53B4A8D25BFCDAC007D9604 /* ListFriendTableViewCell.xib */; };
 		D53B4A9425BFD439007D9604 /* ListFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53B4A9225BFD439007D9604 /* ListFriendViewController.swift */; };
 		D53B4A9525BFD439007D9604 /* ListFriendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D53B4A9325BFD439007D9604 /* ListFriendViewController.xib */; };
-		D53BB37225BE6025001BEC4C /* DetailPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53BB37025BE6025001BEC4C /* DetailPostViewController.swift */; };
-		D53BB37325BE6025001BEC4C /* DetailPostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D53BB37125BE6025001BEC4C /* DetailPostViewController.xib */; };
 		D53BB37625BE6C5C001BEC4C /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53BB37525BE6C5C001BEC4C /* Post.swift */; };
+		D55BABCE25C291AE00567C22 /* UIView+SetBackgroundImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55BABCD25C291AE00567C22 /* UIView+SetBackgroundImage.swift */; };
 		D565AF6B25B6C7830090FA5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D565AF6A25B6C7830090FA5B /* AppDelegate.swift */; };
 		D565AF6D25B6C7830090FA5B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D565AF6C25B6C7830090FA5B /* SceneDelegate.swift */; };
 		D565AF7425B6C7860090FA5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D565AF7325B6C7860090FA5B /* Assets.xcassets */; };
@@ -38,6 +37,12 @@
 		D59ECF2125BA8B8D0078DC87 /* CreatePostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D59ECF1F25BA8B8D0078DC87 /* CreatePostTableViewCell.xib */; };
 		D59ECF2625BA8B9C0078DC87 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59ECF2425BA8B9C0078DC87 /* PostTableViewCell.swift */; };
 		D59ECF2725BA8B9C0078DC87 /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D59ECF2525BA8B9C0078DC87 /* PostTableViewCell.xib */; };
+		D5A208E225C1118300BE9473 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A208E025C1118300BE9473 /* SearchTableViewCell.swift */; };
+		D5A208E325C1118300BE9473 /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5A208E125C1118300BE9473 /* SearchTableViewCell.xib */; };
+		D5A208EA25C1179400BE9473 /* FriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A208E825C1179400BE9473 /* FriendViewController.swift */; };
+		D5A208EB25C1179400BE9473 /* FriendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5A208E925C1179400BE9473 /* FriendViewController.xib */; };
+		D5A208F225C1187300BE9473 /* ProfileFriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A208F025C1187300BE9473 /* ProfileFriendTableViewCell.swift */; };
+		D5A208F325C1187300BE9473 /* ProfileFriendTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5A208F125C1187300BE9473 /* ProfileFriendTableViewCell.xib */; };
 		D5D1B5B525B7C32D0041C30C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D1B5B325B7C32D0041C30C /* LoginViewController.swift */; };
 		D5D1B5B625B7C32D0041C30C /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5D1B5B425B7C32D0041C30C /* LoginViewController.xib */; };
 		D5D1B5C025B7C8BB0041C30C /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D1B5BE25B7C8BB0041C30C /* StartViewController.swift */; };
@@ -49,10 +54,19 @@
 		D5DFBDBE25BEAD9400C7AC50 /* UILabel+UnderLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DFBDBD25BEAD9400C7AC50 /* UILabel+UnderLine.swift */; };
 		D5DFBDC425BEC1D000C7AC50 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DFBDC225BEC1D000C7AC50 /* UserTableViewCell.swift */; };
 		D5DFBDC525BEC1D000C7AC50 /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5DFBDC325BEC1D000C7AC50 /* UserTableViewCell.xib */; };
+		D5E78F9A25C7EE620066C71B /* KeySearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E78F9825C7EE620066C71B /* KeySearchViewController.swift */; };
+		D5E78F9B25C7EE620066C71B /* KeySearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5E78F9925C7EE620066C71B /* KeySearchViewController.xib */; };
+		D5E78F9E25C7F0560066C71B /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E78F9D25C7F0560066C71B /* UserDefaultManager.swift */; };
+		D5E78FA425C7F1A50066C71B /* KeySearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E78FA225C7F1A50066C71B /* KeySearchTableViewCell.swift */; };
+		D5E78FA525C7F1A50066C71B /* KeySearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5E78FA325C7F1A50066C71B /* KeySearchTableViewCell.xib */; };
 		D5F410FA25BAAC33007F8E03 /* CreatePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F410F825BAAC33007F8E03 /* CreatePostViewController.swift */; };
 		D5F410FB25BAAC33007F8E03 /* CreatePostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5F410F925BAAC33007F8E03 /* CreatePostViewController.xib */; };
 		D5F410FF25BAB37D007F8E03 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F410FE25BAB37D007F8E03 /* User.swift */; };
 		D5F4110325BAC50A007F8E03 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F4110225BAC50A007F8E03 /* ImagePicker.swift */; };
+		D5F4115B25C79FCF00EAFEF1 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F4115925C79FCF00EAFEF1 /* ImageCollectionViewCell.swift */; };
+		D5F4115C25C79FCF00EAFEF1 /* ImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5F4115A25C79FCF00EAFEF1 /* ImageCollectionViewCell.xib */; };
+		D5F4116225C7A22F00EAFEF1 /* DetailImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F4116025C7A22F00EAFEF1 /* DetailImageViewController.swift */; };
+		D5F4116325C7A22F00EAFEF1 /* DetailImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5F4116125C7A22F00EAFEF1 /* DetailImageViewController.xib */; };
 		ECA9BFC04B4E55E34EDD8D20 /* Pods_Travel_Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 836F0B7ED4C0D8C388AC73F4 /* Pods_Travel_Social.framework */; };
 /* End PBXBuildFile section */
 
@@ -67,9 +81,8 @@
 		D53B4A8D25BFCDAC007D9604 /* ListFriendTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListFriendTableViewCell.xib; sourceTree = "<group>"; };
 		D53B4A9225BFD439007D9604 /* ListFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListFriendViewController.swift; sourceTree = "<group>"; };
 		D53B4A9325BFD439007D9604 /* ListFriendViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListFriendViewController.xib; sourceTree = "<group>"; };
-		D53BB37025BE6025001BEC4C /* DetailPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPostViewController.swift; sourceTree = "<group>"; };
-		D53BB37125BE6025001BEC4C /* DetailPostViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailPostViewController.xib; sourceTree = "<group>"; };
 		D53BB37525BE6C5C001BEC4C /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		D55BABCD25C291AE00567C22 /* UIView+SetBackgroundImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+SetBackgroundImage.swift"; sourceTree = "<group>"; };
 		D565AF6725B6C7830090FA5B /* Travel Social.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Travel Social.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D565AF6A25B6C7830090FA5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D565AF6C25B6C7830090FA5B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +105,12 @@
 		D59ECF1F25BA8B8D0078DC87 /* CreatePostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreatePostTableViewCell.xib; sourceTree = "<group>"; };
 		D59ECF2425BA8B9C0078DC87 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		D59ECF2525BA8B9C0078DC87 /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
+		D5A208E025C1118300BE9473 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
+		D5A208E125C1118300BE9473 /* SearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
+		D5A208E825C1179400BE9473 /* FriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendViewController.swift; sourceTree = "<group>"; };
+		D5A208E925C1179400BE9473 /* FriendViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendViewController.xib; sourceTree = "<group>"; };
+		D5A208F025C1187300BE9473 /* ProfileFriendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileFriendTableViewCell.swift; sourceTree = "<group>"; };
+		D5A208F125C1187300BE9473 /* ProfileFriendTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileFriendTableViewCell.xib; sourceTree = "<group>"; };
 		D5D1B5B325B7C32D0041C30C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D5D1B5B425B7C32D0041C30C /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		D5D1B5BE25B7C8BB0041C30C /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
@@ -103,10 +122,19 @@
 		D5DFBDBD25BEAD9400C7AC50 /* UILabel+UnderLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+UnderLine.swift"; sourceTree = "<group>"; };
 		D5DFBDC225BEC1D000C7AC50 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		D5DFBDC325BEC1D000C7AC50 /* UserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
+		D5E78F9825C7EE620066C71B /* KeySearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeySearchViewController.swift; sourceTree = "<group>"; };
+		D5E78F9925C7EE620066C71B /* KeySearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeySearchViewController.xib; sourceTree = "<group>"; };
+		D5E78F9D25C7F0560066C71B /* UserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
+		D5E78FA225C7F1A50066C71B /* KeySearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeySearchTableViewCell.swift; sourceTree = "<group>"; };
+		D5E78FA325C7F1A50066C71B /* KeySearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeySearchTableViewCell.xib; sourceTree = "<group>"; };
 		D5F410F825BAAC33007F8E03 /* CreatePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostViewController.swift; sourceTree = "<group>"; };
 		D5F410F925BAAC33007F8E03 /* CreatePostViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreatePostViewController.xib; sourceTree = "<group>"; };
 		D5F410FE25BAB37D007F8E03 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D5F4110225BAC50A007F8E03 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		D5F4115925C79FCF00EAFEF1 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		D5F4115A25C79FCF00EAFEF1 /* ImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCollectionViewCell.xib; sourceTree = "<group>"; };
+		D5F4116025C7A22F00EAFEF1 /* DetailImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailImageViewController.swift; sourceTree = "<group>"; };
+		D5F4116125C7A22F00EAFEF1 /* DetailImageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailImageViewController.xib; sourceTree = "<group>"; };
 		F6C99052D11F6870D7A639C5 /* Pods-Travel Social.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travel Social.release.xcconfig"; path = "Target Support Files/Pods-Travel Social/Pods-Travel Social.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -204,15 +232,6 @@
 			path = "List Friend";
 			sourceTree = "<group>";
 		};
-		D53BB36F25BE5FF8001BEC4C /* Detail Post */ = {
-			isa = PBXGroup;
-			children = (
-				D53BB37025BE6025001BEC4C /* DetailPostViewController.swift */,
-				D53BB37125BE6025001BEC4C /* DetailPostViewController.xib */,
-			);
-			path = "Detail Post";
-			sourceTree = "<group>";
-		};
 		D554C2F625C05F43009506EA /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -276,8 +295,7 @@
 		D59ECEF225BA7B2C0078DC87 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				D5F410F725BAABFB007F8E03 /* Post */,
-				D53BB36F25BE5FF8001BEC4C /* Detail Post */,
+				D5F4116725C7A8D400EAFEF1 /* Detail Create Post */,
 				D59ECF0D25BA87D00078DC87 /* View */,
 				D59ECF0C25BA87C40078DC87 /* Controller */,
 			);
@@ -287,6 +305,8 @@
 		D59ECEF925BA7B9C0078DC87 /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				D5E78F9725C7EDE80066C71B /* Key Search */,
+				D5A208E725C1176A00BE9473 /* Friend */,
 				D5DFBDC125BEC19E00C7AC50 /* View */,
 				D5DFBDC025BEC18100C7AC50 /* Controller */,
 			);
@@ -341,10 +361,56 @@
 		D59ECF1D25BA8B5E0078DC87 /* Post */ = {
 			isa = PBXGroup;
 			children = (
-				D59ECF2425BA8B9C0078DC87 /* PostTableViewCell.swift */,
-				D59ECF2525BA8B9C0078DC87 /* PostTableViewCell.xib */,
+				D5F4116525C7A6BF00EAFEF1 /* DetailImage */,
+				D5F4115825C79FA000EAFEF1 /* View */,
+				D5F4115725C79F9300EAFEF1 /* Controller */,
 			);
 			path = Post;
+			sourceTree = "<group>";
+		};
+		D5A208DF25C1114900BE9473 /* SearchCell */ = {
+			isa = PBXGroup;
+			children = (
+				D5A208E025C1118300BE9473 /* SearchTableViewCell.swift */,
+				D5A208E125C1118300BE9473 /* SearchTableViewCell.xib */,
+			);
+			path = SearchCell;
+			sourceTree = "<group>";
+		};
+		D5A208E525C116FF00BE9473 /* UserCell */ = {
+			isa = PBXGroup;
+			children = (
+				D5DFBDC225BEC1D000C7AC50 /* UserTableViewCell.swift */,
+				D5DFBDC325BEC1D000C7AC50 /* UserTableViewCell.xib */,
+			);
+			path = UserCell;
+			sourceTree = "<group>";
+		};
+		D5A208E725C1176A00BE9473 /* Friend */ = {
+			isa = PBXGroup;
+			children = (
+				D5A208EE25C1181600BE9473 /* View */,
+				D5A208ED25C1180700BE9473 /* Controller */,
+			);
+			path = Friend;
+			sourceTree = "<group>";
+		};
+		D5A208ED25C1180700BE9473 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D5A208E825C1179400BE9473 /* FriendViewController.swift */,
+				D5A208E925C1179400BE9473 /* FriendViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D5A208EE25C1181600BE9473 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D5A208F025C1187300BE9473 /* ProfileFriendTableViewCell.swift */,
+				D5A208F125C1187300BE9473 /* ProfileFriendTableViewCell.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		D5D1B5B025B7C2E00041C30C /* UI */ = {
@@ -411,6 +477,7 @@
 			children = (
 				D585825F25BD5966003BE66C /* DataManager.swift */,
 				D585826325BDA9ED003BE66C /* DataImageManager.swift */,
+				D5E78F9D25C7F0560066C71B /* UserDefaultManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -419,6 +486,7 @@
 			isa = PBXGroup;
 			children = (
 				D5DFBDBD25BEAD9400C7AC50 /* UILabel+UnderLine.swift */,
+				D55BABCD25C291AE00567C22 /* UIView+SetBackgroundImage.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -435,19 +503,37 @@
 		D5DFBDC125BEC19E00C7AC50 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				D5DFBDC225BEC1D000C7AC50 /* UserTableViewCell.swift */,
-				D5DFBDC325BEC1D000C7AC50 /* UserTableViewCell.xib */,
+				D5A208E525C116FF00BE9473 /* UserCell */,
+				D5A208DF25C1114900BE9473 /* SearchCell */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		D5F410F725BAABFB007F8E03 /* Post */ = {
+		D5E78F9725C7EDE80066C71B /* Key Search */ = {
 			isa = PBXGroup;
 			children = (
-				D5F410F825BAAC33007F8E03 /* CreatePostViewController.swift */,
-				D5F410F925BAAC33007F8E03 /* CreatePostViewController.xib */,
+				D5E78FA125C7F1730066C71B /* View */,
+				D5E78FA025C7F1660066C71B /* Controller */,
 			);
-			path = Post;
+			path = "Key Search";
+			sourceTree = "<group>";
+		};
+		D5E78FA025C7F1660066C71B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D5E78F9825C7EE620066C71B /* KeySearchViewController.swift */,
+				D5E78F9925C7EE620066C71B /* KeySearchViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D5E78FA125C7F1730066C71B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D5E78FA225C7F1A50066C71B /* KeySearchTableViewCell.swift */,
+				D5E78FA325C7F1A50066C71B /* KeySearchTableViewCell.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		D5F410FD25BAB363007F8E03 /* Model */ = {
@@ -457,6 +543,42 @@
 				D53BB37525BE6C5C001BEC4C /* Post.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		D5F4115725C79F9300EAFEF1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D59ECF2425BA8B9C0078DC87 /* PostTableViewCell.swift */,
+				D59ECF2525BA8B9C0078DC87 /* PostTableViewCell.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D5F4115825C79FA000EAFEF1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D5F4115925C79FCF00EAFEF1 /* ImageCollectionViewCell.swift */,
+				D5F4115A25C79FCF00EAFEF1 /* ImageCollectionViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D5F4116525C7A6BF00EAFEF1 /* DetailImage */ = {
+			isa = PBXGroup;
+			children = (
+				D5F4116025C7A22F00EAFEF1 /* DetailImageViewController.swift */,
+				D5F4116125C7A22F00EAFEF1 /* DetailImageViewController.xib */,
+			);
+			path = DetailImage;
+			sourceTree = "<group>";
+		};
+		D5F4116725C7A8D400EAFEF1 /* Detail Create Post */ = {
+			isa = PBXGroup;
+			children = (
+				D5F410F825BAAC33007F8E03 /* CreatePostViewController.swift */,
+				D5F410F925BAAC33007F8E03 /* CreatePostViewController.xib */,
+			);
+			path = "Detail Create Post";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -523,20 +645,26 @@
 				D5921E6F25BD24CC009F9D17 /* EditProfileViewController.xib in Resources */,
 				D59ECEF025BA7B220078DC87 /* CustomBarViewController.xib in Resources */,
 				D5D1B5C625B7C8DB0041C30C /* SignUpViewController.xib in Resources */,
-				D53BB37325BE6025001BEC4C /* DetailPostViewController.xib in Resources */,
+				D5A208F325C1187300BE9473 /* ProfileFriendTableViewCell.xib in Resources */,
 				D565AF7725B6C7860090FA5B /* LaunchScreen.storyboard in Resources */,
 				D565AF7425B6C7860090FA5B /* Assets.xcassets in Resources */,
 				D53B4A9525BFD439007D9604 /* ListFriendViewController.xib in Resources */,
 				D5F410FB25BAAC33007F8E03 /* CreatePostViewController.xib in Resources */,
 				D5D1B5B625B7C32D0041C30C /* LoginViewController.xib in Resources */,
+				D5E78F9B25C7EE620066C71B /* KeySearchViewController.xib in Resources */,
+				D5F4116325C7A22F00EAFEF1 /* DetailImageViewController.xib in Resources */,
+				D5A208E325C1118300BE9473 /* SearchTableViewCell.xib in Resources */,
 				D59ECEFD25BA7BB30078DC87 /* SearchViewController.xib in Resources */,
 				D59ECF0325BA7BD10078DC87 /* MessageViewController.xib in Resources */,
 				D5D1B5C125B7C8BB0041C30C /* StartViewController.xib in Resources */,
 				D53B4A8125BFC7AF007D9604 /* UserViewController.xib in Resources */,
 				D53B4A8F25BFCDAC007D9604 /* ListFriendTableViewCell.xib in Resources */,
+				D5E78FA525C7F1A50066C71B /* KeySearchTableViewCell.xib in Resources */,
 				D53B4A8725BFC814007D9604 /* InfoUserTableViewCell.xib in Resources */,
 				D5D1B5C925B7E1EF0041C30C /* GoogleService-Info.plist in Resources */,
 				D59ECF1825BA8A620078DC87 /* HomeViewController.xib in Resources */,
+				D5A208EB25C1179400BE9473 /* FriendViewController.xib in Resources */,
+				D5F4115C25C79FCF00EAFEF1 /* ImageCollectionViewCell.xib in Resources */,
 				D59ECF2725BA8B9C0078DC87 /* PostTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -599,22 +727,30 @@
 				D59ECF2625BA8B9C0078DC87 /* PostTableViewCell.swift in Sources */,
 				D565AF6B25B6C7830090FA5B /* AppDelegate.swift in Sources */,
 				D59ECEFC25BA7BB30078DC87 /* SearchViewController.swift in Sources */,
+				D5A208E225C1118300BE9473 /* SearchTableViewCell.swift in Sources */,
 				D59ECF0225BA7BD10078DC87 /* MessageViewController.swift in Sources */,
-				D53BB37225BE6025001BEC4C /* DetailPostViewController.swift in Sources */,
 				D5F410FF25BAB37D007F8E03 /* User.swift in Sources */,
 				D59ECEEF25BA7B220078DC87 /* CustomBarViewController.swift in Sources */,
+				D5F4116225C7A22F00EAFEF1 /* DetailImageViewController.swift in Sources */,
 				D53BB37625BE6C5C001BEC4C /* Post.swift in Sources */,
+				D5E78FA425C7F1A50066C71B /* KeySearchTableViewCell.swift in Sources */,
 				D5921E6E25BD24CC009F9D17 /* EditProfileViewController.swift in Sources */,
 				D59ECF1725BA8A620078DC87 /* HomeViewController.swift in Sources */,
 				D53B4A9425BFD439007D9604 /* ListFriendViewController.swift in Sources */,
+				D5E78F9E25C7F0560066C71B /* UserDefaultManager.swift in Sources */,
 				D565AF6D25B6C7830090FA5B /* SceneDelegate.swift in Sources */,
+				D55BABCE25C291AE00567C22 /* UIView+SetBackgroundImage.swift in Sources */,
 				D53B4A8E25BFCDAC007D9604 /* ListFriendTableViewCell.swift in Sources */,
 				D585826025BD5966003BE66C /* DataManager.swift in Sources */,
+				D5E78F9A25C7EE620066C71B /* KeySearchViewController.swift in Sources */,
+				D5F4115B25C79FCF00EAFEF1 /* ImageCollectionViewCell.swift in Sources */,
 				D59ECF2025BA8B8D0078DC87 /* CreatePostTableViewCell.swift in Sources */,
 				D5F4110325BAC50A007F8E03 /* ImagePicker.swift in Sources */,
 				D5DFBDBE25BEAD9400C7AC50 /* UILabel+UnderLine.swift in Sources */,
+				D5A208EA25C1179400BE9473 /* FriendViewController.swift in Sources */,
 				D53B4A8025BFC7AF007D9604 /* UserViewController.swift in Sources */,
 				D5D1B5C025B7C8BB0041C30C /* StartViewController.swift in Sources */,
+				D5A208F225C1187300BE9473 /* ProfileFriendTableViewCell.swift in Sources */,
 				D5D1B5C525B7C8DB0041C30C /* SignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,17 +1,15 @@
 //
-//  UserTableViewCell.swift
+//  KeySearchTableViewCell.swift
 //  Travel Social
 //
-//  Created by Phan Nguyen on 25/01/2021.
+//  Created by Phan Nguyen on 01/02/2021.
 //
 
 import UIKit
 
-class UserTableViewCell: UITableViewCell {
+class KeySearchTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var avatarImageView: UIImageView!
-    @IBOutlet weak var nameLabel: UILabel!
-    
+    @IBOutlet weak var keySearchLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

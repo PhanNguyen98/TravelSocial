@@ -12,7 +12,7 @@ import FirebaseFirestore
 class DataManager {
     static let shared = DataManager()
     let db = Firestore.firestore()
-    var user = User(id: "", nameImage: "user.png", name: nil, birthday: nil, place: nil, listIdFriends: nil)
+    var user = User(id: "", nameImage: "user.png", name: nil, birthday: nil, place: nil, listIdFriends: nil, nameBackgroundImage: "background.jpg")
     
     private init(){
     }
@@ -25,6 +25,7 @@ class DataManager {
             "birthday": user.birthday ?? "",
             "place": user.place ?? "",
             "listIdFriends": user.listIdFriends ?? [""],
+            "background": user.nameBackgroundImage ?? "background.jpg"
         ]) { err in
             if let err = err {
                 print("Error writing document: \(err)")
@@ -33,6 +34,28 @@ class DataManager {
             }
         }
     }
+    
+    func setDataFriend(id: String, listFriend: [String]) {
+        db.collection("users").document(id).setData([
+            "listIdFriends": listFriend
+        ], merge: true)
+    }
+    
+    func setDataPost(data: Post) {
+        db.collection("posts").document().setData([
+            "id": data.id ,
+            "listImage": data.listImage ?? [""],
+            "content": data.content ?? ""
+        ]) { err in
+            if let err = err {
+                print("Error writing document: \(err)")
+            } else {
+                print("Document successfully written!")
+            }
+        }
+    }
+    
+    
     
     func getUserFromId(id: String) {
         db.collection("users").whereField("id", isEqualTo: id)
@@ -55,6 +78,8 @@ class DataManager {
                                 self.user.name = values as? String
                             case "avatar":
                                 self.user.nameImage = values as? String
+                            case "background":
+                            self.user.nameBackgroundImage = values as? String
                             default:
                                 break
                             }
@@ -64,36 +89,67 @@ class DataManager {
         }
     }
     
-    func searchUser(name: String) -> [User] {
-        var listUser = [User]()
-        db.collection("user").whereField("name", isEqualTo: name).getDocuments() { (querySnapshot, err) in
-            if let err = err {
-                print("Error getting documents: \(err)")
-            } else {
-                for document in querySnapshot!.documents {
-                    var item = User()
-                    for (key, values) in document.data() {
-                        switch key {
-                        case "birthday":
-                            item.birthday = values as? String
-                        case "place":
-                            item.place = values as? String
-                        case "id":
-                            item.id = values as? String
-                        case "listIdFriends":
-                            item.listIdFriends = values as? [String]
-                        case "name":
-                            item.name = values as? String
-                        case "avatar":
-                            item.nameImage = values as? String
-                        default:
-                            break
+    func getUserFromName(name: String,completionHandler: @escaping (_ result: [User]) -> ()) {
+        var dataSources = [User]()
+        db.collection("users").whereField("name", isEqualTo: name)
+            .getDocuments() { (querySnapshot, err) in
+                if let err = err {
+                    print("Error getting documents: \(err)")
+                } else {
+                    for document in querySnapshot!.documents {
+                        var result = User()
+                        for (key, values) in document.data() {
+                            switch key {
+                            case "birthday":
+                                result.birthday = values as? String
+                            case "place":
+                                result.place = values as? String
+                            case "id":
+                                result.id = values as? String
+                            case "listIdFriends":
+                                result.listIdFriends = values as? [String]
+                            case "name":
+                                result.name = values as? String
+                            case "avatar":
+                                result.nameImage = values as? String
+                            case "background":
+                                result.nameBackgroundImage = values as? String
+                            default:
+                                break
+                            }
                         }
+                        dataSources.append(result)
                     }
-                    listUser.append(item)
+                    completionHandler(dataSources)
                 }
-            }
         }
-        return listUser
+    }
+    
+    func getPostFromId(id: String, completionHandler: @escaping (_ result: [Post]) -> ()) {
+        var dataSources = [Post]()
+        db.collection("posts").whereField("id", isEqualTo: id)
+            .getDocuments() { (querySnapshot, err) in
+                if let err = err {
+                    print("Error getting documents: \(err)")
+                } else {
+                    for document in querySnapshot!.documents {
+                        var data = Post(id: id)
+                        for (key, values) in document.data() {
+                            switch key {
+                            case "id":
+                                data.id = values as! String
+                            case "listImage":
+                                data.listImage = values as? [String]
+                            case "content":
+                                data.content = values as? String
+                            default:
+                                break
+                            }
+                        }
+                        dataSources.append(data)
+                    }
+                    completionHandler(dataSources)
+                }
+        }
     }
 }

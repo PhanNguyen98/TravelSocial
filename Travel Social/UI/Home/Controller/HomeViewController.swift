@@ -12,17 +12,17 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var dataSources = [Post]()
-    var dataUser = DataManager.shared.user
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpTableView()
+        self.tabBarController?.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
-        dataUser = DataManager.shared.user
+        tableView.reloadData()
     }
     
     func setUpTableView() {
@@ -35,12 +35,7 @@ class HomeViewController: UIViewController {
 }
 
 extension HomeViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row != 0 {
-            let detailPostViewController = DetailPostViewController()
-            self.navigationController?.pushViewController(detailPostViewController, animated: true)
-        }
-    }
+    
 }
 
 extension HomeViewController: UITableViewDataSource {
@@ -54,15 +49,16 @@ extension HomeViewController: UITableViewDataSource {
         case 0:
             return 80
         default:
-            return 100
+            return 500
         }
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        if section == 1 {
+        if section == 0 {
+            return 0
+        } else {
             return 10
         }
-        return 0
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -81,22 +77,43 @@ extension HomeViewController: UITableViewDataSource {
                 return CreatePostTableViewCell()
             }
             cell.cellDelegate = self
-            cell.setData(item: dataUser)
+            cell.selectionStyle = .none
+            cell.setData(item: DataManager.shared.user)
             return cell
         default:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "PostTableViewCell", for: indexPath) as? PostTableViewCell else {
                 return PostTableViewCell()
             }
+            cell.cellDelegate = self
+            cell.setdata(data: dataSources[indexPath.row])
+            cell.selectionStyle = .none
             return cell
         }
     }
     
 }
 
+extension HomeViewController: PostTableViewCellDelegate {
+    func collectionView(collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath, data: UIImage) {
+        let detailImageViewController = DetailImageViewController()
+        detailImageViewController.imageView.image = data
+        self.navigationController?.pushViewController(detailImageViewController, animated: true)
+    }
+}
+
 extension HomeViewController: CreatePostTableViewCellDelegate {
-    
     func pushViewController(viewController: UIViewController) {
         self.navigationController?.pushViewController(viewController, animated: true)
     }
-    
+}
+
+extension HomeViewController: UITabBarControllerDelegate {
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        if tabBarController.selectedIndex == 0 {
+            DataManager.shared.getPostFromId(id: DataManager.shared.user.id!) { result in
+                self.dataSources = result
+                self.tableView.reloadData()
+            }
+        }
+    }
 }

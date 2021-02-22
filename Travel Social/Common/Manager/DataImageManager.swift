@@ -13,7 +13,6 @@ class DataImageManager {
     static let shared = DataImageManager()
     
     let storageRef = Storage.storage().reference()
-    var resultImage: UIImage?
     
     private init(){
     }
@@ -30,14 +29,15 @@ class DataImageManager {
         }
     }
     
-    func downloadImage(path: String, nameImage: String) {
+    func downloadImage(path: String, nameImage: String, completionHandler: @escaping (_ result: UIImage) -> ()) {
         let imageRef = storageRef.child(path).child(nameImage)
         imageRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
             if let error = error {
                 print(error)
             } else {
-                let result = UIImage(data: data!)
-                self.resultImage = result
+                if let result = UIImage(data: data!){
+                    completionHandler(result)
+                }
             }
         }
     }

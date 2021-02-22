@@ -8,11 +8,12 @@
 import UIKit
 
 protocol InfoUserTableViewCellDelegate: class {
-    func showEditProfile(viewController: UIViewController)
+    func pushViewController(viewController: UIViewController)
 }
 
 class InfoUserTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var placeLabel: UILabel!
     @IBOutlet weak var birthdayLabel: UILabel!
@@ -32,7 +33,8 @@ class InfoUserTableViewCell: UITableViewCell {
     
     @IBAction func editProfile(_ sender: Any) {
         let editProfileViewController = EditProfileViewController()
-        self.cellDelegate?.showEditProfile(viewController: editProfileViewController)
+        editProfileViewController.editVCDelegate = self
+        self.cellDelegate?.pushViewController(viewController: editProfileViewController)
     }
     
     func setUI() {
@@ -40,9 +42,7 @@ class InfoUserTableViewCell: UITableViewCell {
         nameLabel.underline()
         birthdayLabel.underline()
         placeLabel.underline()
-        editProfileButton.layer.cornerRadius = 5
-        editProfileButton.layer.borderWidth = 0.3
-        editProfileButton.layer.borderColor = UIColor.black.cgColor
+        editProfileButton.layer.cornerRadius = 10
         editProfileButton.layer.masksToBounds = true
     }
     
@@ -50,10 +50,28 @@ class InfoUserTableViewCell: UITableViewCell {
         nameLabel.text = item.name
         birthdayLabel.text = item.birthday
         placeLabel.text = item.place
-        DataImageManager.shared.downloadImage(path: "avatar", nameImage: item.nameImage!)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            self.avatarImageView.image = DataImageManager.shared.resultImage
+        DataImageManager.shared.downloadImage(path: "avatar", nameImage: item.nameBackgroundImage!) { result in
+            DispatchQueue.main.async() {
+                self.backgroundImageView.image = result
+            }
         }
+        DataImageManager.shared.downloadImage(path: "avatar", nameImage: item.nameImage!) { result in
+            DispatchQueue.main.async() {
+                self.avatarImageView.image = result
+            }
+        }
+    }
+    
+}
+
+extension InfoUserTableViewCell: EditProfileViewControllerDelegate {
+    
+    func changeAvatarImage(image: UIImage?) {
+        avatarImageView.image = image
+    }
+    
+    func changeBackgroundImage(image: UIImage?) {
+        backgroundImageView.image = image
     }
     
 }

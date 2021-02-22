@@ -15,35 +15,52 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var createButton: UIButton!
+    @IBOutlet weak var loginButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "chevron.backward"), style: .plain, target: self, action: #selector(popViewController))
+        setNavigation()
+        setViewKeyboard()
     }
     
     @objc func popViewController() {
         self.navigationController?.popViewController(animated: true)
     }
     
+    func setNavigation() {
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "chevron.backward"), style: .plain, target: self, action: #selector(popViewController))
+    }
+    
+    func setViewKeyboard() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(sender:)), name: UIResponder.keyboardWillShowNotification, object: nil);
+
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(sender:)), name: UIResponder.keyboardWillHideNotification, object: nil);
+    }
+    
     func setUI() {
-        nameTextField.layer.cornerRadius = nameTextField.frame.height / 2
-        nameTextField.layer.borderColor = UIColor.black.cgColor
-        nameTextField.layer.borderWidth = 0.5
+        self.view.setBackgroundImage(img: UIImage(named: "background")!)
+        
+        nameTextField.layer.cornerRadius = 20
         nameTextField.layer.masksToBounds = true
         
-        emailTextField.layer.cornerRadius = nameTextField.frame.height / 2
-        emailTextField.layer.borderColor = UIColor.black.cgColor
-        emailTextField.layer.borderWidth = 0.5
+        emailTextField.layer.cornerRadius = 20
         emailTextField.layer.masksToBounds = true
         
-        passwordTextField.layer.cornerRadius = passwordTextField.frame.height / 2
-        passwordTextField.layer.borderColor = UIColor.black.cgColor
-        passwordTextField.layer.borderWidth = 0.5
+        passwordTextField.layer.cornerRadius = 20
         passwordTextField.layer.masksToBounds = true
+        passwordTextField.isSecureTextEntry = true
         
         createButton.layer.cornerRadius = createButton.frame.height / 2
         createButton.layer.masksToBounds = true
+        
+        loginButton.layer.cornerRadius = createButton.frame.height / 2
+        loginButton.layer.masksToBounds = true
+    }
+    
+    @IBAction func showLoginView(_ sender: Any) {
+        let loginViewController = LoginViewController()
+        self.navigationController?.pushViewController(loginViewController, animated: true)
     }
     
     @IBAction func createAccount(_ sender: Any) {
@@ -69,6 +86,14 @@ class SignUpViewController: UIViewController {
         }
     }
     
+    @objc func keyboardWillShow(sender: NSNotification) {
+         self.view.frame.origin.y = -150
+    }
+
+    @objc func keyboardWillHide(sender: NSNotification) {
+         self.view.frame.origin.y = 0
+    }
+    
     func validateFields() -> String? {
         if nameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
             passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
@@ -81,7 +106,7 @@ class SignUpViewController: UIViewController {
               else { return "please fill in all fields" }
         
         if Utilities.isValidPassword(cleanPassword) == false {
-            return "please make sure your password is at least 8 characters"
+            return "please make sure your password least 8 characters, capital, number"
         }
         
         if Utilities.isValidEmail(email: email) == false {

@@ -11,7 +11,8 @@ struct Post {
     var id: String
     var content: String?
     var listImage: [String]?
-    var listComment: [Comment]?
+    var date: String?
+    //var listComment: [Comment]?
 }
 
 struct Comment {
