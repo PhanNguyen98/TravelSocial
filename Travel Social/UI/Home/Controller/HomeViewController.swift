@@ -9,6 +9,7 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+//MARK: Properties
     @IBOutlet weak var tableView: UITableView!
     
     var dataSources = [Post]()
@@ -31,26 +32,26 @@ class HomeViewController: UIViewController {
         tableView.register(UINib(nibName: "CreatePostTableViewCell", bundle: nil), forCellReuseIdentifier: "CreatePostTableViewCell")
         tableView.register(UINib(nibName: "PostTableViewCell", bundle: nil), forCellReuseIdentifier: "PostTableViewCell")
     }
-
+    
 }
 
 extension HomeViewController: UITableViewDelegate {
-    
-}
-
-extension HomeViewController: UITableViewDataSource {
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
-    }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.section {
         case 0:
             return 80
         default:
-            return 500
+            return 425
         }
+    }
+    
+}
+
+extension HomeViewController: UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return dataSources.count + 1
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -62,12 +63,7 @@ extension HomeViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch section {
-        case 0:
-            return 1
-        default:
-            return dataSources.count
-        }
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -85,8 +81,10 @@ extension HomeViewController: UITableViewDataSource {
                 return PostTableViewCell()
             }
             cell.cellDelegate = self
-            cell.setdata(data: dataSources[indexPath.row])
+            cell.dataPost = dataSources[dataSources.count - indexPath.section]
+            cell.setdata(data: dataSources[dataSources.count - indexPath.section])
             cell.selectionStyle = .none
+            cell.collectionView.contentOffset = .zero
             return cell
         }
     }
@@ -94,26 +92,69 @@ extension HomeViewController: UITableViewDataSource {
 }
 
 extension HomeViewController: PostTableViewCellDelegate {
-    func collectionView(collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath, data: UIImage) {
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath, nameImage: String) {
         let detailImageViewController = DetailImageViewController()
-        detailImageViewController.imageView.image = data
+        detailImageViewController.nameImage = nameImage
         self.navigationController?.pushViewController(detailImageViewController, animated: true)
     }
+    
+    func showListUser(listUser: [String]) {
+        let listUserViewController = ListUserViewController()
+        DataManager.shared.getListUser(listId: listUser) { result in
+            listUserViewController.dataSources = result
+            self.present(listUserViewController, animated: true, completion: nil)
+        }
+    }
+    
+    func showListComment(dataPost: Post) {
+        let commentViewController = CommentViewController()
+        commentViewController.dataPost = dataPost
+        commentViewController.commentDelegate = self
+        self.present(commentViewController, animated: true, completion: nil)
+    }
+    
 }
 
 extension HomeViewController: CreatePostTableViewCellDelegate {
+    
     func pushViewController(viewController: UIViewController) {
         self.navigationController?.pushViewController(viewController, animated: true)
     }
+    
 }
 
 extension HomeViewController: UITabBarControllerDelegate {
+    
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
         if tabBarController.selectedIndex == 0 {
-            DataManager.shared.getPostFromId(id: DataManager.shared.user.id!) { result in
+            var data = DataManager.shared.user.listIdFriends ?? []
+            data.append(DataManager.shared.user.id!)
+            DataManager.shared.getPostFromListId(listId: data) { result in
                 self.dataSources = result
                 self.tableView.reloadData()
             }
         }
+        
+        if tabBarController.selectedIndex == 4 {
+            let userViewController = viewController as? UserViewController
+            DataManager.shared.getPostFromId(idUser: DataManager.shared.user.id!) { result in
+                userViewController?.dataSources = result
+                DataManager.shared.setDataUser()
+                userViewController?.dataUser = DataManager.shared.user
+                userViewController?.tableView.reloadData()
+            }
+        }
     }
+    
+}
+
+extension HomeViewController: CommentViewControllerDelegate {
+    
+    func reloadCountComment() {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
+    
 }

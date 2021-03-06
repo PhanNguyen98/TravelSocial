@@ -32,4 +32,20 @@ class Utilities {
         return thumbnail
     }
     
+    static func checkPhotoLibrary() {
+        let photos = PHPhotoLibrary.authorizationStatus()
+        if photos == .notDetermined {
+            PHPhotoLibrary.requestAuthorization({ status in
+                switch status {
+                case .authorized:
+                    break
+                default:
+                    DispatchQueue.main.async {
+                        UIApplication.shared.open(URL(string: "App-prefs:DemoFruit&path=Photo")!, options: [:], completionHandler: nil)
+                    }
+                }
+            })
+        } else if photos == .authorized {
+        }
+    }
 }

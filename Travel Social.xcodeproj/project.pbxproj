@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D50A537125E6897E009D2C74 /* ListUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50A536F25E6897E009D2C74 /* ListUserViewController.swift */; };
+		D50A537225E6897E009D2C74 /* ListUserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D50A537025E6897E009D2C74 /* ListUserViewController.xib */; };
 		D53B4A8025BFC7AF007D9604 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53B4A7E25BFC7AF007D9604 /* UserViewController.swift */; };
 		D53B4A8125BFC7AF007D9604 /* UserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D53B4A7F25BFC7AF007D9604 /* UserViewController.xib */; };
 		D53B4A8625BFC814007D9604 /* InfoUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53B4A8425BFC814007D9604 /* InfoUserTableViewCell.swift */; };
@@ -16,37 +18,55 @@
 		D53B4A9425BFD439007D9604 /* ListFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53B4A9225BFD439007D9604 /* ListFriendViewController.swift */; };
 		D53B4A9525BFD439007D9604 /* ListFriendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D53B4A9325BFD439007D9604 /* ListFriendViewController.xib */; };
 		D53BB37625BE6C5C001BEC4C /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53BB37525BE6C5C001BEC4C /* Post.swift */; };
+		D54BCCCB25EF277A0025EFEA /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54BCCC925EF277A0025EFEA /* WeatherViewController.swift */; };
+		D54BCCCC25EF277A0025EFEA /* WeatherViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D54BCCCA25EF277A0025EFEA /* WeatherViewController.xib */; };
+		D54BCCE925EF29EF0025EFEA /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54BCCE825EF29EF0025EFEA /* APIManager.swift */; };
+		D54BCCEC25EF2A390025EFEA /* WeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54BCCEB25EF2A390025EFEA /* WeatherAPI.swift */; };
+		D54BCCEF25EF2A6B0025EFEA /* ResponseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54BCCEE25EF2A6B0025EFEA /* ResponseError.swift */; };
+		D54BCCF725EF38C10025EFEA /* SeverPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54BCCF625EF38C10025EFEA /* SeverPath.swift */; };
+		D54BCCFB25EF42310025EFEA /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54BCCFA25EF42310025EFEA /* Weather.swift */; };
+		D54BCCFE25EF45B90025EFEA /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54BCCFD25EF45B90025EFEA /* WeatherManager.swift */; };
 		D55BABCE25C291AE00567C22 /* UIView+SetBackgroundImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55BABCD25C291AE00567C22 /* UIView+SetBackgroundImage.swift */; };
+		D564899725E74D6300A34CB6 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D564899525E74D6300A34CB6 /* CommentViewController.swift */; };
+		D564899825E74D6300A34CB6 /* CommentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D564899625E74D6300A34CB6 /* CommentViewController.xib */; };
+		D564899C25E74D8600A34CB6 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D564899A25E74D8600A34CB6 /* CommentTableViewCell.swift */; };
+		D564899D25E74D8600A34CB6 /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D564899B25E74D8600A34CB6 /* CommentTableViewCell.xib */; };
+		D56489A025E780EB00A34CB6 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D564899F25E780EB00A34CB6 /* Comment.swift */; };
 		D565AF6B25B6C7830090FA5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D565AF6A25B6C7830090FA5B /* AppDelegate.swift */; };
 		D565AF6D25B6C7830090FA5B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D565AF6C25B6C7830090FA5B /* SceneDelegate.swift */; };
 		D565AF7425B6C7860090FA5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D565AF7325B6C7860090FA5B /* Assets.xcassets */; };
 		D565AF7725B6C7860090FA5B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D565AF7525B6C7860090FA5B /* LaunchScreen.storyboard */; };
+		D571B1B325F1D7A40093785C /* UIAlertController+pruneNegativeWidthConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = D571B1B225F1D7A40093785C /* UIAlertController+pruneNegativeWidthConstraints.swift */; };
 		D585826025BD5966003BE66C /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D585825F25BD5966003BE66C /* DataManager.swift */; };
 		D585826425BDA9ED003BE66C /* DataImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D585826325BDA9ED003BE66C /* DataImageManager.swift */; };
+		D5889B6F25F235F7008F1B97 /* UIViewController+hideKeyboardWhenTappedAround.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5889B6E25F235F7008F1B97 /* UIViewController+hideKeyboardWhenTappedAround.swift */; };
 		D5921E6E25BD24CC009F9D17 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5921E6C25BD24CC009F9D17 /* EditProfileViewController.swift */; };
 		D5921E6F25BD24CC009F9D17 /* EditProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5921E6D25BD24CC009F9D17 /* EditProfileViewController.xib */; };
 		D59ECEEF25BA7B220078DC87 /* CustomBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59ECEED25BA7B220078DC87 /* CustomBarViewController.swift */; };
 		D59ECEF025BA7B220078DC87 /* CustomBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D59ECEEE25BA7B220078DC87 /* CustomBarViewController.xib */; };
 		D59ECEFC25BA7BB30078DC87 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59ECEFA25BA7BB30078DC87 /* SearchViewController.swift */; };
 		D59ECEFD25BA7BB30078DC87 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D59ECEFB25BA7BB30078DC87 /* SearchViewController.xib */; };
-		D59ECF0225BA7BD10078DC87 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59ECF0025BA7BD10078DC87 /* MessageViewController.swift */; };
-		D59ECF0325BA7BD10078DC87 /* MessageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D59ECF0125BA7BD10078DC87 /* MessageViewController.xib */; };
 		D59ECF1725BA8A620078DC87 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59ECF1525BA8A620078DC87 /* HomeViewController.swift */; };
 		D59ECF1825BA8A620078DC87 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D59ECF1625BA8A620078DC87 /* HomeViewController.xib */; };
 		D59ECF2025BA8B8D0078DC87 /* CreatePostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59ECF1E25BA8B8D0078DC87 /* CreatePostTableViewCell.swift */; };
 		D59ECF2125BA8B8D0078DC87 /* CreatePostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D59ECF1F25BA8B8D0078DC87 /* CreatePostTableViewCell.xib */; };
 		D59ECF2625BA8B9C0078DC87 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59ECF2425BA8B9C0078DC87 /* PostTableViewCell.swift */; };
 		D59ECF2725BA8B9C0078DC87 /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D59ECF2525BA8B9C0078DC87 /* PostTableViewCell.xib */; };
+		D59EF59725F06D8F003DC267 /* WeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59EF59525F06D8F003DC267 /* WeatherTableViewCell.swift */; };
+		D59EF59825F06D8F003DC267 /* WeatherTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D59EF59625F06D8F003DC267 /* WeatherTableViewCell.xib */; };
 		D5A208E225C1118300BE9473 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A208E025C1118300BE9473 /* SearchTableViewCell.swift */; };
 		D5A208E325C1118300BE9473 /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5A208E125C1118300BE9473 /* SearchTableViewCell.xib */; };
 		D5A208EA25C1179400BE9473 /* FriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A208E825C1179400BE9473 /* FriendViewController.swift */; };
 		D5A208EB25C1179400BE9473 /* FriendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5A208E925C1179400BE9473 /* FriendViewController.xib */; };
 		D5A208F225C1187300BE9473 /* ProfileFriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A208F025C1187300BE9473 /* ProfileFriendTableViewCell.swift */; };
 		D5A208F325C1187300BE9473 /* ProfileFriendTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5A208F125C1187300BE9473 /* ProfileFriendTableViewCell.xib */; };
+		D5C34B5E25EDCBE4009E4260 /* NotifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C34B5C25EDCBE4009E4260 /* NotifyViewController.swift */; };
+		D5C34B5F25EDCBE4009E4260 /* NotifyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5C34B5D25EDCBE4009E4260 /* NotifyViewController.xib */; };
+		D5C34B6725EDCDA0009E4260 /* NotifyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C34B6525EDCDA0009E4260 /* NotifyTableViewCell.swift */; };
+		D5C34B6825EDCDA0009E4260 /* NotifyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5C34B6625EDCDA0009E4260 /* NotifyTableViewCell.xib */; };
+		D5C34B6C25EDD38D009E4260 /* Notify.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C34B6B25EDD38D009E4260 /* Notify.swift */; };
 		D5D1B5B525B7C32D0041C30C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D1B5B325B7C32D0041C30C /* LoginViewController.swift */; };
 		D5D1B5B625B7C32D0041C30C /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5D1B5B425B7C32D0041C30C /* LoginViewController.xib */; };
-		D5D1B5C025B7C8BB0041C30C /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D1B5BE25B7C8BB0041C30C /* StartViewController.swift */; };
-		D5D1B5C125B7C8BB0041C30C /* StartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5D1B5BF25B7C8BB0041C30C /* StartViewController.xib */; };
 		D5D1B5C525B7C8DB0041C30C /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D1B5C325B7C8DB0041C30C /* SignUpViewController.swift */; };
 		D5D1B5C625B7C8DB0041C30C /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5D1B5C425B7C8DB0041C30C /* SignUpViewController.xib */; };
 		D5D1B5C925B7E1EF0041C30C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D5D1B5C825B7E1EF0041C30C /* GoogleService-Info.plist */; };
@@ -73,6 +93,8 @@
 /* Begin PBXFileReference section */
 		1F61722B811686107D4BE62A /* Pods-Travel Social.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travel Social.debug.xcconfig"; path = "Target Support Files/Pods-Travel Social/Pods-Travel Social.debug.xcconfig"; sourceTree = "<group>"; };
 		836F0B7ED4C0D8C388AC73F4 /* Pods_Travel_Social.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Travel_Social.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D50A536F25E6897E009D2C74 /* ListUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUserViewController.swift; sourceTree = "<group>"; };
+		D50A537025E6897E009D2C74 /* ListUserViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListUserViewController.xib; sourceTree = "<group>"; };
 		D53B4A7E25BFC7AF007D9604 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		D53B4A7F25BFC7AF007D9604 /* UserViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserViewController.xib; sourceTree = "<group>"; };
 		D53B4A8425BFC814007D9604 /* InfoUserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoUserTableViewCell.swift; sourceTree = "<group>"; };
@@ -82,39 +104,57 @@
 		D53B4A9225BFD439007D9604 /* ListFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListFriendViewController.swift; sourceTree = "<group>"; };
 		D53B4A9325BFD439007D9604 /* ListFriendViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListFriendViewController.xib; sourceTree = "<group>"; };
 		D53BB37525BE6C5C001BEC4C /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		D54BCCC925EF277A0025EFEA /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
+		D54BCCCA25EF277A0025EFEA /* WeatherViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherViewController.xib; sourceTree = "<group>"; };
+		D54BCCE825EF29EF0025EFEA /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		D54BCCEB25EF2A390025EFEA /* WeatherAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPI.swift; sourceTree = "<group>"; };
+		D54BCCEE25EF2A6B0025EFEA /* ResponseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseError.swift; sourceTree = "<group>"; };
+		D54BCCF625EF38C10025EFEA /* SeverPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeverPath.swift; sourceTree = "<group>"; };
+		D54BCCFA25EF42310025EFEA /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		D54BCCFD25EF45B90025EFEA /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
 		D55BABCD25C291AE00567C22 /* UIView+SetBackgroundImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+SetBackgroundImage.swift"; sourceTree = "<group>"; };
+		D564899525E74D6300A34CB6 /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
+		D564899625E74D6300A34CB6 /* CommentViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentViewController.xib; sourceTree = "<group>"; };
+		D564899A25E74D8600A34CB6 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
+		D564899B25E74D8600A34CB6 /* CommentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentTableViewCell.xib; sourceTree = "<group>"; };
+		D564899F25E780EB00A34CB6 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		D565AF6725B6C7830090FA5B /* Travel Social.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Travel Social.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D565AF6A25B6C7830090FA5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D565AF6C25B6C7830090FA5B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D565AF7325B6C7860090FA5B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D565AF7625B6C7860090FA5B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D565AF7825B6C7860090FA5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D571B1B225F1D7A40093785C /* UIAlertController+pruneNegativeWidthConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+pruneNegativeWidthConstraints.swift"; sourceTree = "<group>"; };
 		D585825F25BD5966003BE66C /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		D585826325BDA9ED003BE66C /* DataImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataImageManager.swift; sourceTree = "<group>"; };
+		D5889B6E25F235F7008F1B97 /* UIViewController+hideKeyboardWhenTappedAround.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+hideKeyboardWhenTappedAround.swift"; sourceTree = "<group>"; };
 		D5921E6C25BD24CC009F9D17 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		D5921E6D25BD24CC009F9D17 /* EditProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditProfileViewController.xib; sourceTree = "<group>"; };
 		D59ECEED25BA7B220078DC87 /* CustomBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBarViewController.swift; sourceTree = "<group>"; };
 		D59ECEEE25BA7B220078DC87 /* CustomBarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomBarViewController.xib; sourceTree = "<group>"; };
 		D59ECEFA25BA7BB30078DC87 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		D59ECEFB25BA7BB30078DC87 /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
-		D59ECF0025BA7BD10078DC87 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
-		D59ECF0125BA7BD10078DC87 /* MessageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageViewController.xib; sourceTree = "<group>"; };
 		D59ECF1525BA8A620078DC87 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		D59ECF1625BA8A620078DC87 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		D59ECF1E25BA8B8D0078DC87 /* CreatePostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostTableViewCell.swift; sourceTree = "<group>"; };
 		D59ECF1F25BA8B8D0078DC87 /* CreatePostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreatePostTableViewCell.xib; sourceTree = "<group>"; };
 		D59ECF2425BA8B9C0078DC87 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		D59ECF2525BA8B9C0078DC87 /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
+		D59EF59525F06D8F003DC267 /* WeatherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTableViewCell.swift; sourceTree = "<group>"; };
+		D59EF59625F06D8F003DC267 /* WeatherTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherTableViewCell.xib; sourceTree = "<group>"; };
 		D5A208E025C1118300BE9473 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		D5A208E125C1118300BE9473 /* SearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
 		D5A208E825C1179400BE9473 /* FriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendViewController.swift; sourceTree = "<group>"; };
 		D5A208E925C1179400BE9473 /* FriendViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendViewController.xib; sourceTree = "<group>"; };
 		D5A208F025C1187300BE9473 /* ProfileFriendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileFriendTableViewCell.swift; sourceTree = "<group>"; };
 		D5A208F125C1187300BE9473 /* ProfileFriendTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileFriendTableViewCell.xib; sourceTree = "<group>"; };
+		D5C34B5C25EDCBE4009E4260 /* NotifyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifyViewController.swift; sourceTree = "<group>"; };
+		D5C34B5D25EDCBE4009E4260 /* NotifyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotifyViewController.xib; sourceTree = "<group>"; };
+		D5C34B6525EDCDA0009E4260 /* NotifyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifyTableViewCell.swift; sourceTree = "<group>"; };
+		D5C34B6625EDCDA0009E4260 /* NotifyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotifyTableViewCell.xib; sourceTree = "<group>"; };
+		D5C34B6B25EDD38D009E4260 /* Notify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notify.swift; sourceTree = "<group>"; };
 		D5D1B5B325B7C32D0041C30C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D5D1B5B425B7C32D0041C30C /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
-		D5D1B5BE25B7C8BB0041C30C /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
-		D5D1B5BF25B7C8BB0041C30C /* StartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StartViewController.xib; sourceTree = "<group>"; };
 		D5D1B5C325B7C8DB0041C30C /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		D5D1B5C425B7C8DB0041C30C /* SignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
 		D5D1B5C825B7E1EF0041C30C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -167,10 +207,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D50A535F25E68887009D2C74 /* ListUserHeart */ = {
+			isa = PBXGroup;
+			children = (
+				D50A536F25E6897E009D2C74 /* ListUserViewController.swift */,
+				D50A537025E6897E009D2C74 /* ListUserViewController.xib */,
+			);
+			name = ListUserHeart;
+			sourceTree = "<group>";
+		};
 		D53B4A7725BFC15D007D9604 /* Login Sign Up */ = {
 			isa = PBXGroup;
 			children = (
-				D5D1B5BC25B7C63D0041C30C /* Start */,
 				D5D1B5B225B7C30F0041C30C /* Login */,
 				D5D1B5BB25B7C62C0041C30C /* SignUp */,
 			);
@@ -232,6 +280,33 @@
 			path = "List Friend";
 			sourceTree = "<group>";
 		};
+		D54BCCC625EF22A70025EFEA /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				D59EF59425F06D6F003DC267 /* View */,
+				D59EF59325F06D59003DC267 /* Controller */,
+			);
+			path = Weather;
+			sourceTree = "<group>";
+		};
+		D54BCCE725EF29D50025EFEA /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				D54BCCE825EF29EF0025EFEA /* APIManager.swift */,
+				D54BCCEB25EF2A390025EFEA /* WeatherAPI.swift */,
+				D54BCCEE25EF2A6B0025EFEA /* ResponseError.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		D54BCCF525EF388A0025EFEA /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				D54BCCF625EF38C10025EFEA /* SeverPath.swift */,
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
 		D554C2F625C05F43009506EA /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -239,6 +314,33 @@
 				D5F4110225BAC50A007F8E03 /* ImagePicker.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		D564899225E74D1B00A34CB6 /* Create Comment */ = {
+			isa = PBXGroup;
+			children = (
+				D564899425E74D3E00A34CB6 /* View */,
+				D564899325E74D3100A34CB6 /* Controller */,
+			);
+			path = "Create Comment";
+			sourceTree = "<group>";
+		};
+		D564899325E74D3100A34CB6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D564899525E74D6300A34CB6 /* CommentViewController.swift */,
+				D564899625E74D6300A34CB6 /* CommentViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D564899425E74D3E00A34CB6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D564899A25E74D8600A34CB6 /* CommentTableViewCell.swift */,
+				D564899B25E74D8600A34CB6 /* CommentTableViewCell.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		D565AF5E25B6C7830090FA5B = {
@@ -313,15 +415,6 @@
 			path = Search;
 			sourceTree = "<group>";
 		};
-		D59ECEFF25BA7BBB0078DC87 /* Message */ = {
-			isa = PBXGroup;
-			children = (
-				D59ECF0025BA7BD10078DC87 /* MessageViewController.swift */,
-				D59ECF0125BA7BD10078DC87 /* MessageViewController.xib */,
-			);
-			path = Message;
-			sourceTree = "<group>";
-		};
 		D59ECF0625BA7BD60078DC87 /* User */ = {
 			isa = PBXGroup;
 			children = (
@@ -343,6 +436,8 @@
 		D59ECF0D25BA87D00078DC87 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D564899225E74D1B00A34CB6 /* Create Comment */,
+				D50A535F25E68887009D2C74 /* ListUserHeart */,
 				D59ECF1D25BA8B5E0078DC87 /* Post */,
 				D59ECF1B25BA8B430078DC87 /* Create Post */,
 			);
@@ -366,6 +461,24 @@
 				D5F4115725C79F9300EAFEF1 /* Controller */,
 			);
 			path = Post;
+			sourceTree = "<group>";
+		};
+		D59EF59325F06D59003DC267 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D54BCCC925EF277A0025EFEA /* WeatherViewController.swift */,
+				D54BCCCA25EF277A0025EFEA /* WeatherViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D59EF59425F06D6F003DC267 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D59EF59525F06D8F003DC267 /* WeatherTableViewCell.swift */,
+				D59EF59625F06D8F003DC267 /* WeatherTableViewCell.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		D5A208DF25C1114900BE9473 /* SearchCell */ = {
@@ -413,6 +526,33 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		D5C34B5B25EDCBBC009E4260 /* Notify */ = {
+			isa = PBXGroup;
+			children = (
+				D5C34B6425EDCD75009E4260 /* View */,
+				D5C34B6125EDCBE9009E4260 /* Controller */,
+			);
+			path = Notify;
+			sourceTree = "<group>";
+		};
+		D5C34B6125EDCBE9009E4260 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D5C34B5C25EDCBE4009E4260 /* NotifyViewController.swift */,
+				D5C34B5D25EDCBE4009E4260 /* NotifyViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D5C34B6425EDCD75009E4260 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D5C34B6525EDCDA0009E4260 /* NotifyTableViewCell.swift */,
+				D5C34B6625EDCDA0009E4260 /* NotifyTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		D5D1B5B025B7C2E00041C30C /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -420,7 +560,8 @@
 				D59ECECC25BA60F80078DC87 /* Tab Bar */,
 				D59ECEF225BA7B2C0078DC87 /* Home */,
 				D59ECEF925BA7B9C0078DC87 /* Search */,
-				D59ECEFF25BA7BBB0078DC87 /* Message */,
+				D54BCCC625EF22A70025EFEA /* Weather */,
+				D5C34B5B25EDCBBC009E4260 /* Notify */,
 				D59ECF0625BA7BD60078DC87 /* User */,
 			);
 			path = UI;
@@ -453,18 +594,11 @@
 			path = SignUp;
 			sourceTree = "<group>";
 		};
-		D5D1B5BC25B7C63D0041C30C /* Start */ = {
-			isa = PBXGroup;
-			children = (
-				D5D1B5BE25B7C8BB0041C30C /* StartViewController.swift */,
-				D5D1B5BF25B7C8BB0041C30C /* StartViewController.xib */,
-			);
-			path = Start;
-			sourceTree = "<group>";
-		};
 		D5D1B5E125B80CAE0041C30C /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				D54BCCF525EF388A0025EFEA /* Constant */,
+				D54BCCE725EF29D50025EFEA /* Service */,
 				D554C2F625C05F43009506EA /* Utilities */,
 				D5DFBDBB25BE9FBF00C7AC50 /* Extension */,
 				D5D1B5E225B80CBA0041C30C /* Manager */,
@@ -478,6 +612,7 @@
 				D585825F25BD5966003BE66C /* DataManager.swift */,
 				D585826325BDA9ED003BE66C /* DataImageManager.swift */,
 				D5E78F9D25C7F0560066C71B /* UserDefaultManager.swift */,
+				D54BCCFD25EF45B90025EFEA /* WeatherManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -487,6 +622,8 @@
 			children = (
 				D5DFBDBD25BEAD9400C7AC50 /* UILabel+UnderLine.swift */,
 				D55BABCD25C291AE00567C22 /* UIView+SetBackgroundImage.swift */,
+				D571B1B225F1D7A40093785C /* UIAlertController+pruneNegativeWidthConstraints.swift */,
+				D5889B6E25F235F7008F1B97 /* UIViewController+hideKeyboardWhenTappedAround.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -541,6 +678,9 @@
 			children = (
 				D5F410FE25BAB37D007F8E03 /* User.swift */,
 				D53BB37525BE6C5C001BEC4C /* Post.swift */,
+				D564899F25E780EB00A34CB6 /* Comment.swift */,
+				D5C34B6B25EDD38D009E4260 /* Notify.swift */,
+				D54BCCFA25EF42310025EFEA /* Weather.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -643,11 +783,15 @@
 				D5DFBDC525BEC1D000C7AC50 /* UserTableViewCell.xib in Resources */,
 				D59ECF2125BA8B8D0078DC87 /* CreatePostTableViewCell.xib in Resources */,
 				D5921E6F25BD24CC009F9D17 /* EditProfileViewController.xib in Resources */,
+				D5C34B6825EDCDA0009E4260 /* NotifyTableViewCell.xib in Resources */,
 				D59ECEF025BA7B220078DC87 /* CustomBarViewController.xib in Resources */,
 				D5D1B5C625B7C8DB0041C30C /* SignUpViewController.xib in Resources */,
 				D5A208F325C1187300BE9473 /* ProfileFriendTableViewCell.xib in Resources */,
 				D565AF7725B6C7860090FA5B /* LaunchScreen.storyboard in Resources */,
 				D565AF7425B6C7860090FA5B /* Assets.xcassets in Resources */,
+				D564899D25E74D8600A34CB6 /* CommentTableViewCell.xib in Resources */,
+				D5C34B5F25EDCBE4009E4260 /* NotifyViewController.xib in Resources */,
+				D50A537225E6897E009D2C74 /* ListUserViewController.xib in Resources */,
 				D53B4A9525BFD439007D9604 /* ListFriendViewController.xib in Resources */,
 				D5F410FB25BAAC33007F8E03 /* CreatePostViewController.xib in Resources */,
 				D5D1B5B625B7C32D0041C30C /* LoginViewController.xib in Resources */,
@@ -655,17 +799,18 @@
 				D5F4116325C7A22F00EAFEF1 /* DetailImageViewController.xib in Resources */,
 				D5A208E325C1118300BE9473 /* SearchTableViewCell.xib in Resources */,
 				D59ECEFD25BA7BB30078DC87 /* SearchViewController.xib in Resources */,
-				D59ECF0325BA7BD10078DC87 /* MessageViewController.xib in Resources */,
-				D5D1B5C125B7C8BB0041C30C /* StartViewController.xib in Resources */,
 				D53B4A8125BFC7AF007D9604 /* UserViewController.xib in Resources */,
 				D53B4A8F25BFCDAC007D9604 /* ListFriendTableViewCell.xib in Resources */,
+				D564899825E74D6300A34CB6 /* CommentViewController.xib in Resources */,
 				D5E78FA525C7F1A50066C71B /* KeySearchTableViewCell.xib in Resources */,
 				D53B4A8725BFC814007D9604 /* InfoUserTableViewCell.xib in Resources */,
 				D5D1B5C925B7E1EF0041C30C /* GoogleService-Info.plist in Resources */,
+				D54BCCCC25EF277A0025EFEA /* WeatherViewController.xib in Resources */,
 				D59ECF1825BA8A620078DC87 /* HomeViewController.xib in Resources */,
 				D5A208EB25C1179400BE9473 /* FriendViewController.xib in Resources */,
 				D5F4115C25C79FCF00EAFEF1 /* ImageCollectionViewCell.xib in Resources */,
 				D59ECF2725BA8B9C0078DC87 /* PostTableViewCell.xib in Resources */,
+				D59EF59825F06D8F003DC267 /* WeatherTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -720,26 +865,36 @@
 			files = (
 				D585826425BDA9ED003BE66C /* DataImageManager.swift in Sources */,
 				D5DFBDC425BEC1D000C7AC50 /* UserTableViewCell.swift in Sources */,
+				D59EF59725F06D8F003DC267 /* WeatherTableViewCell.swift in Sources */,
 				D5D1B60825B819D50041C30C /* Utilities.swift in Sources */,
 				D5D1B5B525B7C32D0041C30C /* LoginViewController.swift in Sources */,
+				D54BCCFB25EF42310025EFEA /* Weather.swift in Sources */,
 				D53B4A8625BFC814007D9604 /* InfoUserTableViewCell.swift in Sources */,
 				D5F410FA25BAAC33007F8E03 /* CreatePostViewController.swift in Sources */,
 				D59ECF2625BA8B9C0078DC87 /* PostTableViewCell.swift in Sources */,
+				D5C34B5E25EDCBE4009E4260 /* NotifyViewController.swift in Sources */,
 				D565AF6B25B6C7830090FA5B /* AppDelegate.swift in Sources */,
+				D564899725E74D6300A34CB6 /* CommentViewController.swift in Sources */,
 				D59ECEFC25BA7BB30078DC87 /* SearchViewController.swift in Sources */,
 				D5A208E225C1118300BE9473 /* SearchTableViewCell.swift in Sources */,
-				D59ECF0225BA7BD10078DC87 /* MessageViewController.swift in Sources */,
 				D5F410FF25BAB37D007F8E03 /* User.swift in Sources */,
 				D59ECEEF25BA7B220078DC87 /* CustomBarViewController.swift in Sources */,
 				D5F4116225C7A22F00EAFEF1 /* DetailImageViewController.swift in Sources */,
+				D54BCCEC25EF2A390025EFEA /* WeatherAPI.swift in Sources */,
+				D5C34B6725EDCDA0009E4260 /* NotifyTableViewCell.swift in Sources */,
 				D53BB37625BE6C5C001BEC4C /* Post.swift in Sources */,
 				D5E78FA425C7F1A50066C71B /* KeySearchTableViewCell.swift in Sources */,
 				D5921E6E25BD24CC009F9D17 /* EditProfileViewController.swift in Sources */,
+				D5889B6F25F235F7008F1B97 /* UIViewController+hideKeyboardWhenTappedAround.swift in Sources */,
 				D59ECF1725BA8A620078DC87 /* HomeViewController.swift in Sources */,
 				D53B4A9425BFD439007D9604 /* ListFriendViewController.swift in Sources */,
+				D54BCCCB25EF277A0025EFEA /* WeatherViewController.swift in Sources */,
 				D5E78F9E25C7F0560066C71B /* UserDefaultManager.swift in Sources */,
+				D571B1B325F1D7A40093785C /* UIAlertController+pruneNegativeWidthConstraints.swift in Sources */,
 				D565AF6D25B6C7830090FA5B /* SceneDelegate.swift in Sources */,
+				D54BCCFE25EF45B90025EFEA /* WeatherManager.swift in Sources */,
 				D55BABCE25C291AE00567C22 /* UIView+SetBackgroundImage.swift in Sources */,
+				D5C34B6C25EDD38D009E4260 /* Notify.swift in Sources */,
 				D53B4A8E25BFCDAC007D9604 /* ListFriendTableViewCell.swift in Sources */,
 				D585826025BD5966003BE66C /* DataManager.swift in Sources */,
 				D5E78F9A25C7EE620066C71B /* KeySearchViewController.swift in Sources */,
@@ -747,11 +902,16 @@
 				D59ECF2025BA8B8D0078DC87 /* CreatePostTableViewCell.swift in Sources */,
 				D5F4110325BAC50A007F8E03 /* ImagePicker.swift in Sources */,
 				D5DFBDBE25BEAD9400C7AC50 /* UILabel+UnderLine.swift in Sources */,
+				D50A537125E6897E009D2C74 /* ListUserViewController.swift in Sources */,
 				D5A208EA25C1179400BE9473 /* FriendViewController.swift in Sources */,
+				D54BCCF725EF38C10025EFEA /* SeverPath.swift in Sources */,
 				D53B4A8025BFC7AF007D9604 /* UserViewController.swift in Sources */,
-				D5D1B5C025B7C8BB0041C30C /* StartViewController.swift in Sources */,
 				D5A208F225C1187300BE9473 /* ProfileFriendTableViewCell.swift in Sources */,
+				D54BCCEF25EF2A6B0025EFEA /* ResponseError.swift in Sources */,
+				D56489A025E780EB00A34CB6 /* Comment.swift in Sources */,
+				D54BCCE925EF29EF0025EFEA /* APIManager.swift in Sources */,
 				D5D1B5C525B7C8DB0041C30C /* SignUpViewController.swift in Sources */,
+				D564899C25E74D8600A34CB6 /* CommentTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

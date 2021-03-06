@@ -19,7 +19,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xgp-Hs-gsN">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xgp-Hs-gsN">
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
@@ -32,7 +32,7 @@
                 <constraint firstItem="xgp-Hs-gsN" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="mhC-Lh-ujt"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="xgp-Hs-gsN" secondAttribute="bottom" id="rPX-of-R6V"/>
             </constraints>
-            <point key="canvasLocation" x="-243" y="68"/>
+            <point key="canvasLocation" x="-243.47826086956525" y="67.633928571428569"/>
         </view>
     </objects>
     <resources>

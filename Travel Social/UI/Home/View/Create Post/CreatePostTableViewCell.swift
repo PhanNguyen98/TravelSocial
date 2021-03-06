@@ -30,6 +30,8 @@ class CreatePostTableViewCell: UITableViewCell {
     func setUI() {
         avatarImageView.layer.cornerRadius = avatarImageView.frame.height / 2
         avatarImageView.layer.masksToBounds = true
+        avatarImageView.layer.borderWidth = 1
+        avatarImageView.layer.borderColor = UIColor.white.cgColor
         
         postButton.layer.cornerRadius = postButton.frame.height / 2
         postButton.layer.borderWidth = 0.2

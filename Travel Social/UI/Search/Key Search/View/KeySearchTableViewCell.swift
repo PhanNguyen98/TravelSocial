@@ -10,6 +10,7 @@ import UIKit
 class KeySearchTableViewCell: UITableViewCell {
 
     @IBOutlet weak var keySearchLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

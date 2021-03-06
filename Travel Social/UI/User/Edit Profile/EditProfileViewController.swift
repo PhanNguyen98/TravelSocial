@@ -16,6 +16,7 @@ protocol EditProfileViewControllerDelegate: class {
 
 class EditProfileViewController: UIViewController {
 
+//MARK: Properties
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var birthdayDatePicker: UIDatePicker!
@@ -28,31 +29,22 @@ class EditProfileViewController: UIViewController {
     var fileNameBackground: String?
     var backgroundImage = PHAsset()
     
+//MARK: ViewCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavigation()
         setUI()
         setViewKeyboard()
+        Utilities.checkPhotoLibrary()
         self.imagePicker = ImagePicker(presentationController: self, delegate: self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        DataImageManager.shared.downloadImage(path: "avatar", nameImage: DataManager.shared.user.nameImage!) { result in
-            self.avatarImageView.image = result
-        }
-        DataImageManager.shared.downloadImage(path: "avatar", nameImage: DataManager.shared.user.nameBackgroundImage!) { result in
-            self.backgroundImageView.image = result
-        }
-        self.nameTextField.text = DataManager.shared.user.name
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd'-'MM'-'yyyy"
-        guard let birthdate = DataManager.shared.user.birthday else { return }
-        let date = dateFormatter.date(from: birthdate)
-        self.birthdayDatePicker.date = date ?? Date()
-        self.placeTextField.text = DataManager.shared.user.place
+        setData()
     }
 
+//MARK: IBAction
     @IBAction func changeAvatarProfile(_ sender: UIButton) {
         self.imagePicker.present(from: sender)
     }
@@ -72,17 +64,25 @@ class EditProfileViewController: UIViewController {
         present(imagePicker, animated: true, completion: nil)
     }
     
-    @objc func keyboardWillShow(sender: NSNotification) {
-         self.view.frame.origin.y = -150
-    }
-
-    @objc func keyboardWillHide(sender: NSNotification) {
-         self.view.frame.origin.y = 0
+//MARK: SetUI
+    func setData() {
+        DataImageManager.shared.downloadImage(path: "avatar", nameImage: DataManager.shared.user.nameImage!) { result in
+            self.avatarImageView.image = result
+        }
+        DataImageManager.shared.downloadImage(path: "avatar", nameImage: DataManager.shared.user.nameBackgroundImage!) { result in
+            self.backgroundImageView.image = result
+        }
+        self.nameTextField.text = DataManager.shared.user.name
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd'-'MM'-'yyyy"
+        guard let birthdate = DataManager.shared.user.birthday else { return }
+        let date = dateFormatter.date(from: birthdate)
+        self.birthdayDatePicker.date = date ?? Date()
+        self.placeTextField.text = DataManager.shared.user.place
     }
     
     func setViewKeyboard() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(sender:)), name: UIResponder.keyboardWillShowNotification, object: nil);
-
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(sender:)), name: UIResponder.keyboardWillHideNotification, object: nil);
     }
     
@@ -90,14 +90,28 @@ class EditProfileViewController: UIViewController {
         avatarImageView.layer.cornerRadius = avatarImageView.frame.height / 2
         nameTextField.layer.cornerRadius = 5
         placeTextField.layer.cornerRadius = 5
+        birthdayDatePicker.preferredDatePickerStyle = .compact
+        self.hideKeyboardWhenTappedAround()
     }
     
     func setNavigation() {
         self.navigationController?.setNavigationBarHidden(false, animated: true)
-        let titleButton = UIBarButtonItem(title: "Edit Profile", style: .plain, target: self, action: nil)
         let backButton = UIBarButtonItem(image: UIImage(systemName: "xmark"), style: .plain, target: self, action: #selector(popViewController))
-        self.navigationItem.leftBarButtonItems = [backButton, titleButton]
+        self.navigationItem.leftBarButtonItem = backButton
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "checkmark"), style: .plain, target: self, action: #selector(saveProfile))
+    }
+    
+//MARK: @objc func
+    @objc func keyboardWillShow(sender: NSNotification) {
+        if let keyboardFrame: NSValue = sender.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+            let keyboardRectangle = keyboardFrame.cgRectValue
+            let keyboardHeight = keyboardRectangle.height
+            self.view.frame.origin.y = -keyboardHeight
+        }
+    }
+
+    @objc func keyboardWillHide(sender: NSNotification) {
+         self.view.frame.origin.y = 0
     }
     
     @objc func popViewController() {
@@ -125,6 +139,7 @@ class EditProfileViewController: UIViewController {
     
 }
 
+//MARK: OpalImagePickerControllerDelegate
 extension EditProfileViewController: OpalImagePickerControllerDelegate {
     func imagePicker(_ picker: OpalImagePickerController, didFinishPickingAssets assets: [PHAsset]) {
         backgroundImageView.image = Utilities.getAssetThumbnail(asset: assets[0])
@@ -139,11 +154,14 @@ extension EditProfileViewController: OpalImagePickerControllerDelegate {
     }
 }
 
+//MARK: ImagePickerDelegate
 extension EditProfileViewController: ImagePickerDelegate {
     
     func didSelect(image: UIImage?) {
-        self.avatarImageView.image = image
-        self.editVCDelegate?.changeAvatarImage(image: image)
+        if let avatarImage = image {
+            self.avatarImageView.image = avatarImage
+            self.editVCDelegate?.changeAvatarImage(image: avatarImage)
+        }
     }
     
     func getFileName(fileName: String?) {

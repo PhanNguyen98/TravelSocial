@@ -10,16 +10,17 @@ import Photos
 
 class CustomBarViewController: UITabBarController {
 
+//MARK: Properties
     var homeViewController = HomeViewController()
     var searchViewController = SearchViewController()
-    var messageViewController = MessageViewController()
+    var notifyViewController = NotifyViewController()
     var userViewController = UserViewController()
+    var weatherViewController = WeatherViewController()
     
+//MARK: ViewCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setTabBar()
-        checkCamera()
-        checkPhotoLibrary()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -28,45 +29,21 @@ class CustomBarViewController: UITabBarController {
         self.navigationController?.navigationBar.barTintColor = UIColor.white
     }
     
+//MARK: SetTabbar
     func setTabBar() {
         self.delegate = self
         homeViewController.tabBarItem.image = UIImage(systemName: "house.fill")
-        searchViewController.tabBarItem.image = UIImage(systemName: "magnifyingglass")
-        messageViewController.tabBarItem.image = UIImage(systemName: "message.fill")
+        searchViewController.tabBarItem.image = UIImage(systemName: "magnifyingglass.circle.fill")
+        notifyViewController.tabBarItem.image = UIImage(systemName: "bell.fill")
         userViewController.tabBarItem.image = UIImage(systemName: "person.fill")
-        viewControllers = [homeViewController, searchViewController, messageViewController, userViewController]
+        weatherViewController.tabBarItem.image = UIImage(systemName: "cloud.sun.rain.fill")
+        viewControllers = [homeViewController, searchViewController, weatherViewController, notifyViewController, userViewController]
         tabBar.tintColor = UIColor.blue
         for tabBarItem in tabBar.items! {
             tabBarItem.title = ""
         }   
     }
     
-    func checkPhotoLibrary() {
-        let photos = PHPhotoLibrary.authorizationStatus()
-        if photos == .notDetermined {
-            PHPhotoLibrary.requestAuthorization({ status in
-                switch status {
-                case .authorized:
-                    break
-                default:
-                    DispatchQueue.main.async {
-                        UIApplication.shared.open(URL(string: "App-prefs:DemoFruit&path=Photo")!, options: [:], completionHandler: nil)
-                    }
-                }
-            })
-        } else if photos == .authorized {
-        }
-    }
-    
-    func checkCamera() {
-        AVCaptureDevice.requestAccess(for: .video) { response in
-            if response {
-                print(response)
-            } else {
-            }
-        }
-    }
-
 }
 
 extension CustomBarViewController: UITabBarControllerDelegate {
