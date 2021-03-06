@@ -23,7 +23,7 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZAP-zk-ywd">
-                        <rect key="frame" x="78" y="28" width="330" height="21"/>
+                        <rect key="frame" x="88" y="28" width="320" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -34,7 +34,7 @@
                     <constraint firstItem="i31-1U-ihX" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="ILu-An-RB6"/>
                     <constraint firstItem="i31-1U-ihX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="Kzg-W6-TDF"/>
                     <constraint firstAttribute="trailing" secondItem="ZAP-zk-ywd" secondAttribute="trailing" constant="10" id="N7y-F2-YOA"/>
-                    <constraint firstItem="ZAP-zk-ywd" firstAttribute="leading" secondItem="i31-1U-ihX" secondAttribute="trailing" constant="10" id="Vma-Ut-5LX"/>
+                    <constraint firstItem="ZAP-zk-ywd" firstAttribute="leading" secondItem="i31-1U-ihX" secondAttribute="trailing" constant="20" id="Vma-Ut-5LX"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

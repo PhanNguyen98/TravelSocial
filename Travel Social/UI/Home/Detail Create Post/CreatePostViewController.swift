@@ -11,18 +11,21 @@ import Photos
 
 class CreatePostViewController: UIViewController {
 
+//MARK: Properties
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var contentTextView: UITextView!
     @IBOutlet weak var selectImageButton: UIButton!
     
     var resultImagePicker = [PHAsset]()
-    var dataPost = Post(id: DataManager.shared.user.id!)
+    var dataPost = Post()
     
+//MARK: ViewCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavigationBar()
         setUI()
+        Utilities.checkPhotoLibrary()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -31,9 +34,12 @@ class CreatePostViewController: UIViewController {
         setDataUser()
     }
     
+//MARK: SetUI
     func setUI() {
         nameLabel.underline()
         avatarImageView.layer.cornerRadius = avatarImageView.frame.height / 2
+        avatarImageView.layer.borderWidth = 1
+        avatarImageView.layer.borderColor = UIColor.white.cgColor
         contentTextView.delegate = self
         contentTextView.layer.cornerRadius = 10
         contentTextView.layer.borderWidth = 0.3
@@ -42,6 +48,12 @@ class CreatePostViewController: UIViewController {
         selectImageButton.layer.masksToBounds = true
     }
     
+    func setNavigationBar() {
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "arrow.left"), style: .plain, target: self, action: #selector(popViewController))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "POST", style: .plain, target: self, action: #selector(pushPost))
+    }
+    
+//MARK: SetData
     func setDataUser() {
         DataImageManager.shared.downloadImage(path: "avatar", nameImage: DataManager.shared.user.nameImage!) { result in
             DispatchQueue.main.async() {
@@ -51,11 +63,20 @@ class CreatePostViewController: UIViewController {
         nameLabel.text = DataManager.shared.user.name
     }
     
-    func setNavigationBar() {
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "arrow.left"), style: .plain, target: self, action: #selector(popViewController))
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "POST", style: .plain, target: self, action: #selector(pushPost))
+    func getCurrentDate() -> String {
+        let currentDateTime = Date()
+        let userCalendar = Calendar.current
+        let requestedComponents: Set<Calendar.Component> = [
+            .year,
+            .month,
+            .day,
+        ]
+        let dateTimeComponents = userCalendar.dateComponents(requestedComponents, from: currentDateTime)
+        let result = String(dateTimeComponents.day!) + "-" + String(dateTimeComponents.month!) + "-" + String(dateTimeComponents.year!)
+        return result
     }
     
+//MARK: IBAction
     @IBAction func selectImage(_ sender: Any) {
         let imagePicker = OpalImagePickerController()
         imagePicker.imagePickerDelegate = self
@@ -71,6 +92,7 @@ class CreatePostViewController: UIViewController {
         present(imagePicker, animated: true, completion: nil)
     }
     
+//MARK: Objc Func
     @objc func popViewController() {
         self.navigationController?.popViewController(animated: true)
     }
@@ -84,9 +106,14 @@ class CreatePostViewController: UIViewController {
             DataImageManager.shared.uploadsImage(image: Utilities.getAssetThumbnail(asset: asset), place: "post", nameImage: nameImage)
         }
         if contentTextView.text != nil || dataPost.listImage != nil {
+            dataPost.idUser = DataManager.shared.user.id!
+            dataPost.date = getCurrentDate()
             dataPost.listImage = resultImage
             dataPost.content = contentTextView.text
-            DataManager.shared.setDataPost(data: dataPost)
+            DataManager.shared.getCountPost() { result in
+                self.dataPost.id = String(result + 1)
+                DataManager.shared.setDataPost(data: self.dataPost)
+            }
             self.navigationController?.popViewController(animated: true)
         }
     }
@@ -96,6 +123,7 @@ class CreatePostViewController: UIViewController {
 extension CreatePostViewController: UITextViewDelegate {
 }
 
+//MARK: OpalImagePickerControllerDelegate
 extension CreatePostViewController: OpalImagePickerControllerDelegate {
     
     func imagePicker(_ picker: OpalImagePickerController, didFinishPickingAssets assets: [PHAsset]) {

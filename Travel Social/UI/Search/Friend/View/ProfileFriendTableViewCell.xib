@@ -18,17 +18,16 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Bdt-fR-pOS">
-                        <rect key="frame" x="0.0" y="0.0" width="426" height="219.5"/>
+                        <rect key="frame" x="10" y="10" width="406" height="219.5"/>
                     </imageView>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6mu-7h-zbo">
-                        <rect key="frame" x="170.5" y="177" width="85" height="85"/>
+                        <rect key="frame" x="160" y="166.5" width="106.5" height="106.5"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="85" id="mX2-7D-dOc"/>
                             <constraint firstAttribute="width" secondItem="6mu-7h-zbo" secondAttribute="height" multiplier="1:1" id="z4K-QA-2c1"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0xd-iK-DaE">
-                        <rect key="frame" x="74" y="279" width="319.5" height="20"/>
+                        <rect key="frame" x="75" y="279" width="319.5" height="20"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="om1-1t-U6m"/>
                         </constraints>
@@ -68,17 +67,29 @@
                             <action selector="addFriend:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="RU6-ez-gWP"/>
                         </connections>
                     </button>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="timer" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Uji-YV-IRk">
-                        <rect key="frame" x="40" y="315" width="20" height="19"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="birthday-cake" translatesAutoresizingMaskIntoConstraints="NO" id="Uji-YV-IRk">
+                        <rect key="frame" x="40" y="314" width="20" height="20"/>
                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="7he-1e-GcT"/>
+                            <constraint firstAttribute="width" constant="20" id="MUb-pE-fkV"/>
+                        </constraints>
                     </imageView>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Uq3-KG-ILb">
-                        <rect key="frame" x="40" y="349.5" width="20" height="19"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="map-position" translatesAutoresizingMaskIntoConstraints="NO" id="Uq3-KG-ILb">
+                        <rect key="frame" x="40" y="349" width="20" height="20"/>
                         <color key="tintColor" systemColor="labelColor"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="20" id="XeW-sM-gyv"/>
+                            <constraint firstAttribute="height" constant="20" id="bC6-Rt-5KG"/>
+                        </constraints>
                     </imageView>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="mT3-uF-U6c">
-                        <rect key="frame" x="40" y="280.5" width="19" height="17.5"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="man-shape" translatesAutoresizingMaskIntoConstraints="NO" id="mT3-uF-U6c">
+                        <rect key="frame" x="40" y="279" width="20" height="20"/>
                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="6Ec-xP-tIh"/>
+                            <constraint firstAttribute="width" constant="20" id="dWv-SZ-reo"/>
+                        </constraints>
                     </imageView>
                 </subviews>
                 <constraints>
@@ -92,20 +103,21 @@
                     <constraint firstItem="Uji-YV-IRk" firstAttribute="top" secondItem="mT3-uF-U6c" secondAttribute="bottom" constant="15" id="Gc6-Vz-gX8"/>
                     <constraint firstItem="Uq3-KG-ILb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="20" id="GsT-4F-cKL"/>
                     <constraint firstItem="INY-1h-AWk" firstAttribute="leading" secondItem="Uji-YV-IRk" secondAttribute="trailing" constant="15" id="NIJ-Xu-87r"/>
-                    <constraint firstAttribute="trailing" secondItem="Bdt-fR-pOS" secondAttribute="trailing" id="Nvn-Kt-aGW"/>
-                    <constraint firstItem="Bdt-fR-pOS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="R8w-AE-wWa"/>
+                    <constraint firstAttribute="trailing" secondItem="Bdt-fR-pOS" secondAttribute="trailing" constant="10" id="Nvn-Kt-aGW"/>
+                    <constraint firstItem="Bdt-fR-pOS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="R8w-AE-wWa"/>
                     <constraint firstItem="Rff-VB-eiU" firstAttribute="top" secondItem="INY-1h-AWk" secondAttribute="bottom" constant="15" id="TzS-kR-kUy"/>
                     <constraint firstItem="Bdt-fR-pOS" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.5" id="Z9s-om-r5g"/>
                     <constraint firstItem="Uji-YV-IRk" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="20" id="bPf-3f-gE6"/>
                     <constraint firstItem="INY-1h-AWk" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="3:4" id="g5S-nY-hDi"/>
                     <constraint firstItem="adY-GN-6zr" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="40" id="gNg-AX-1DM"/>
-                    <constraint firstItem="Bdt-fR-pOS" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="iqN-P8-wes"/>
+                    <constraint firstItem="Bdt-fR-pOS" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="iqN-P8-wes"/>
                     <constraint firstAttribute="bottom" secondItem="adY-GN-6zr" secondAttribute="bottom" constant="15" id="j91-hG-wa3"/>
                     <constraint firstAttribute="trailing" secondItem="adY-GN-6zr" secondAttribute="trailing" constant="40" id="knZ-jJ-Hgv"/>
                     <constraint firstItem="adY-GN-6zr" firstAttribute="top" secondItem="Uq3-KG-ILb" secondAttribute="bottom" constant="25" id="nLu-1I-Uje"/>
                     <constraint firstItem="Rff-VB-eiU" firstAttribute="leading" secondItem="Uq3-KG-ILb" secondAttribute="trailing" constant="15" id="nao-RA-2iK"/>
                     <constraint firstItem="Rff-VB-eiU" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="3:4" id="odY-YN-hiX"/>
                     <constraint firstItem="INY-1h-AWk" firstAttribute="leading" secondItem="Uji-YV-IRk" secondAttribute="trailing" constant="15" id="sfH-Cm-U3D"/>
+                    <constraint firstItem="6mu-7h-zbo" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="1:4" id="smb-F2-zDF"/>
                     <constraint firstItem="0xd-iK-DaE" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="3:4" id="tvh-DG-ujb"/>
                 </constraints>
             </tableViewCellContentView>
@@ -122,9 +134,9 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="location.circle" catalog="system" width="128" height="121"/>
-        <image name="person" catalog="system" width="128" height="117"/>
-        <image name="timer" catalog="system" width="128" height="121"/>
+        <image name="birthday-cake" width="128" height="128"/>
+        <image name="man-shape" width="128" height="128"/>
+        <image name="map-position" width="128" height="128"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

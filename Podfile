@@ -12,5 +12,8 @@ target 'Travel Social' do
   pod 'Firebase/Auth'
   pod 'Firebase/Storage'
   pod 'OpalImagePicker'
+  pod 'Alamofire'
+  pod 'SVProgressHUD'
+  pod 'Kingfisher'
 
 end

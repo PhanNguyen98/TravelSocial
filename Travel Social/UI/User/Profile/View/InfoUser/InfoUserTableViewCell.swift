@@ -39,6 +39,8 @@ class InfoUserTableViewCell: UITableViewCell {
     
     func setUI() {
         avatarImageView.layer.cornerRadius = avatarImageView.frame.height / 2
+        avatarImageView.layer.borderColor = UIColor.white.cgColor
+        avatarImageView.layer.borderWidth = 1
         nameLabel.underline()
         birthdayLabel.underline()
         placeLabel.underline()

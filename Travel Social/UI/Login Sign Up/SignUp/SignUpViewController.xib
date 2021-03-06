@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -10,11 +9,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignUpViewController" customModule="Travel_Social" customModuleProvider="target">
             <connections>
-                <outlet property="createButton" destination="jad-id-0jV" id="GhV-cY-BAg"/>
                 <outlet property="emailTextField" destination="rdA-5C-Xli" id="u2T-sJ-qYb"/>
                 <outlet property="loginButton" destination="qvn-OW-ZZt" id="F4v-YV-Bbg"/>
                 <outlet property="nameTextField" destination="Kn8-Ek-N9g" id="agw-ic-SIO"/>
                 <outlet property="passwordTextField" destination="git-cI-hdu" id="QVV-5V-xIB"/>
+                <outlet property="signUpButton" destination="jad-id-0jV" id="GhV-cY-BAg"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -24,7 +23,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Full Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kn8-Ek-N9g">
-                    <rect key="frame" x="50" y="377" width="314" height="47"/>
+                    <rect key="frame" x="50" y="411" width="314" height="47"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="47" id="HQ8-0l-iYk"/>
                     </constraints>
@@ -32,7 +31,7 @@
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="git-cI-hdu">
-                    <rect key="frame" x="50" y="571" width="314" height="47"/>
+                    <rect key="frame" x="50" y="605" width="314" height="47"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="47" id="5b5-zx-3bL"/>
                     </constraints>
@@ -40,7 +39,7 @@
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jad-id-0jV">
-                    <rect key="frame" x="52" y="678" width="310.5" height="42"/>
+                    <rect key="frame" x="52" y="712" width="310.5" height="42"/>
                     <color key="backgroundColor" systemColor="systemBlueColor"/>
                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
                     <state key="normal" title="Create Account">
@@ -51,25 +50,25 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IFU-6P-1iS">
-                    <rect key="frame" x="50" y="351" width="73" height="21"/>
+                    <rect key="frame" x="50" y="385" width="73" height="21"/>
                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E-mail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KW8-3z-tDL">
-                    <rect key="frame" x="50" y="448" width="47" height="21"/>
+                    <rect key="frame" x="50" y="482" width="47" height="21"/>
                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HG4-nX-oTa">
-                    <rect key="frame" x="50" y="545" width="72" height="21"/>
+                    <rect key="frame" x="50" y="579" width="72" height="21"/>
                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rdA-5C-Xli">
-                    <rect key="frame" x="50" y="474" width="314" height="47"/>
+                    <rect key="frame" x="50" y="508" width="314" height="47"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="47" id="t4k-JY-aWa"/>
                     </constraints>
@@ -77,7 +76,7 @@
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qvn-OW-ZZt">
-                    <rect key="frame" x="52" y="750" width="310.5" height="42"/>
+                    <rect key="frame" x="52" y="784" width="310.5" height="42"/>
                     <color key="backgroundColor" systemColor="systemGray6Color"/>
                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
                     <state key="normal" title="Log In">
@@ -88,7 +87,7 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Account" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p2e-lJ-9TF">
-                    <rect key="frame" x="50" y="84" width="159" height="116"/>
+                    <rect key="frame" x="50" y="40" width="159" height="116"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="159" id="YKd-pB-Qs6"/>
                         <constraint firstAttribute="height" constant="116" id="lgI-2H-P1T"/>

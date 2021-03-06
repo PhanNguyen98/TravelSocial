@@ -34,6 +34,7 @@ class ListFriendTableViewCell: UITableViewCell {
     
     func setUI() {
         countFriendLabel.underline()
+        
         friendsButton.layer.cornerRadius = 10
         friendsButton.layer.masksToBounds = true
     }

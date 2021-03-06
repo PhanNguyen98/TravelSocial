@@ -8,7 +8,8 @@
 import UIKit
 
 class KeySearchViewController: UIViewController {
-    
+
+//MARK: Propreties
     @IBOutlet weak var tableView: UITableView!
     
     let searchController = UISearchController(searchResultsController: nil)
@@ -19,6 +20,12 @@ class KeySearchViewController: UIViewController {
         super.viewDidLoad()
         setSearchController()
         setTableView()
+        self.hideKeyboardWhenTappedAround()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        searchUser()
     }
     
     func setSearchController() {
@@ -37,6 +44,20 @@ class KeySearchViewController: UIViewController {
         tableView.dataSource = self
         tableView.register(UINib(nibName: "UserTableViewCell", bundle: nil), forCellReuseIdentifier: "UserTableViewCell")
     }
+    
+    func searchUser() {
+        DataManager.shared.getUserFromName(name: searchController.searchBar.text ?? "") { result in
+            var listUser = result
+            for index in 0..<result.count {
+                if result[index].id == DataManager.shared.user.id {
+                    listUser.remove(at: index)
+                    self.dataSources = listUser
+                    self.tableView.reloadData()
+                    break
+                }
+            }
+        }
+    }
 
 }
 
@@ -51,9 +72,14 @@ extension KeySearchViewController: UITableViewDelegate {
             let userViewController = UserViewController()
             navigationController?.pushViewController(userViewController, animated: true)
         } else {
+            self.tableView.allowsSelection = false
             let friendViewController = FriendViewController()
-            friendViewController.dataUser = dataSources[indexPath.row]
-            navigationController?.pushViewController(friendViewController, animated: true)
+            DataManager.shared.getPostFromId(idUser: dataSources[indexPath.row].id!) { result in
+                self.tableView.allowsSelection = true
+                friendViewController.dataUser = self.dataSources[indexPath.row]
+                friendViewController.dataPost = result
+                self.navigationController?.pushViewController(friendViewController, animated: true)
+            }
         }
     }
 }
@@ -70,6 +96,7 @@ extension KeySearchViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "UserTableViewCell", for: indexPath) as? UserTableViewCell else { return UserTableViewCell() }
+        cell.selectionStyle = .none
         cell.setData(item: dataSources[indexPath.row])
         return cell
     }
@@ -81,9 +108,14 @@ extension KeySearchViewController: UISearchBarDelegate {
         if let keySearch = searchBar.text {
             UserDefaultManager.shared.setData(text: keySearch)
             DataManager.shared.getUserFromName(name: keySearch) { result in
-                self.dataSources = result
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
+                var listUser = result
+                for index in 0..<result.count {
+                    if result[index].id == DataManager.shared.user.id {
+                        listUser.remove(at: index)
+                        self.dataSources = listUser
+                        self.tableView.reloadData()
+                        break
+                    }
                 }
             }
         }

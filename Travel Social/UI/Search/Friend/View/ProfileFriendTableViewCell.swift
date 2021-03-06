@@ -18,6 +18,7 @@ class ProfileFriendTableViewCell: UITableViewCell {
     
     var isActive = true
     var dataUser = User()
+    var listFriend = DataManager.shared.user.listIdFriends
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -52,17 +53,19 @@ class ProfileFriendTableViewCell: UITableViewCell {
                 }
             }
             for index in 0..<DataManager.shared.user.listIdFriends!.count {
-                if DataManager.shared.user.listIdFriends![index] == dataUser.id {
+                if DataManager.shared.user.listIdFriends?[index] == dataUser.id {
                     DataManager.shared.user.listIdFriends?.remove(at: index)
                     DataManager.shared.setDataFriend(id: DataManager.shared.user.id!, listFriend: DataManager.shared.user.listIdFriends!)
+                    break
                 }
             }
-            
         }
     }
     
     func setUI() {
-        avatarImageView.layer.cornerRadius = avatarImageView.frame.height / 2
+        avatarImageView.layer.cornerRadius = avatarImageView.frame.width / 2
+        avatarImageView.layer.borderColor = UIColor.white.cgColor
+        avatarImageView.layer.borderWidth = 1
         nameLabel.underline()
         birthdayLabel.underline()
         placeLabel.underline()
